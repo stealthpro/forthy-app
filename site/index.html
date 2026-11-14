@@ -46,16 +46,21 @@
         <a class="brand" href="./" aria-label="Forthy — home">
           <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
             <defs>
-              <linearGradient id="brand-gradient" x1="8" y1="8" x2="56" y2="56">
-                <stop offset="0" stop-color="#a092ff" />
-                <stop offset="1" stop-color="#6a4ce0" />
+              <linearGradient id="brand-gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#8f7dff" />
+                <stop offset="0.45" stop-color="#6d5cff" />
+                <stop offset="1" stop-color="#38bdf8" />
               </linearGradient>
             </defs>
             <rect width="64" height="64" rx="16" fill="url(#brand-gradient)" />
             <path
-              d="M22 46V18h22v7H30v5h11v7H30v9z"
-              fill="#fff"
-              fill-opacity="0.96"
+              d="M25.5 19.5 38.5 32 25.5 44.5"
+              fill="none"
+              stroke="#fff"
+              stroke-opacity="0.97"
+              stroke-width="4.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </svg>
           <span>Forthy</span>
@@ -233,7 +238,7 @@
               </span>
               <h3>Logs that follow</h3>
               <p>
-                Follow single, daily or custom-channel files. Levels and stack traces are
+                Follow single, daily or custom log files. Levels and stack traces are
                 parsed, traces collapse until you need them, and the view is always
                 read-only.
               </p>
@@ -547,8 +552,23 @@
         <div class="footer-brand">
           <a class="brand" href="./" aria-label="Forthy — home">
             <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-              <rect width="64" height="64" rx="16" fill="#8b7bff" />
-              <path d="M22 46V18h22v7H30v5h11v7H30v9z" fill="#fff" fill-opacity="0.96" />
+              <defs>
+                <linearGradient id="brand-gradient-footer" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#8f7dff" />
+                  <stop offset="0.45" stop-color="#6d5cff" />
+                  <stop offset="1" stop-color="#38bdf8" />
+                </linearGradient>
+              </defs>
+              <rect width="64" height="64" rx="16" fill="url(#brand-gradient-footer)" />
+              <path
+                d="M25.5 19.5 38.5 32 25.5 44.5"
+                fill="none"
+                stroke="#fff"
+                stroke-opacity="0.97"
+                stroke-width="4.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
             <span>Forthy</span>
           </a>
