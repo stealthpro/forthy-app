@@ -69,10 +69,10 @@ Every frame comes from the same demo project (`acme`) with fictional paths and d
 
 ### Completions from the running app
 
-The editor suggests real class names, methods and config keys read from the running
-application — not a static index of the repository.
+The editor completes config keys from the running application, not from a copy of the
+config files.
 
-![Config-key completion inside a snippet](docs/screenshots/editor.jpg)
+![PHP completion for config keys from the running application](docs/screenshots/editor.jpg)
 
 ## Requirements
 
