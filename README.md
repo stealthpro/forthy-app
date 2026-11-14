@@ -36,9 +36,14 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Routes and config** — the actual route table and configuration tree of the running
   app.
 - **Logs** — follow channel and daily files, with parsed levels and stack traces.
+- **Command palette** — one search over modules, tables, models, routes, snippets and
+  past runs.
 - **Any target** — local PHP, Docker, SSH (key or password) and Kubernetes pods.
+- **Themes** — dark, light or follow the system.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
   never written to disk.
+
+## Screenshots
 
 | Welcome | Database |
 | --- | --- |
@@ -46,11 +51,26 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 
 | Models | Artisan |
 | --- | --- |
-| ![The User model: columns, relations and scopes](docs/screenshots/model.jpg) | ![php artisan about streaming into a console tab](docs/screenshots/artisan.jpg) |
+| ![The User model: columns, relations and scopes](docs/screenshots/model.jpg) | ![php artisan about in a console tab](docs/screenshots/artisan.jpg) |
+
+| Routes | Config |
+| --- | --- |
+| ![The /users route: middleware, resolved URL and route() helper](docs/screenshots/routes.jpg) | ![config/app with the application key masked](docs/screenshots/config.jpg) |
 
 | Logs | Snippets |
 | --- | --- |
-| ![The read-only log viewer with an expanded stack trace](docs/screenshots/logs.jpg) | ![The snippet library in the light theme](docs/screenshots/snippets.jpg) |
+| ![The read-only log viewer with an expanded stack trace](docs/screenshots/logs.jpg) | ![The snippet library with the Revenue this month snippet open](docs/screenshots/snippets.jpg) |
+
+| Command palette | Settings |
+| --- | --- |
+| ![Searching for user across models, tables, snippets and runs](docs/screenshots/palette.jpg) | ![Settings: theme, font size and editor options](docs/screenshots/settings.jpg) |
+
+### Completions from the running app
+
+The editor suggests real class names, methods and config keys read from the running
+application — not a static index of the repository.
+
+![Config-key completion inside a snippet](docs/screenshots/editor.jpg)
 
 ## Requirements
 
