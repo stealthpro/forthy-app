@@ -1,13 +1,14 @@
 # Third-party notices
 
 Forthy bundles third-party software. This inventory lists the components and the
-license family of each one. The full texts ship in `licenses/` next to `Forthy.app`
-in the release archive, and as `Forthy-<version>-licenses.zip` on the release page.
+license family of each one. The full texts are published as
+`Forthy-<version>-licenses.zip` on the release page; new release archives also carry
+`licenses/`, `LICENSE` and this file next to `Forthy.app`.
 
 > **Status: generated.** `licenses/` is produced from `Cargo.lock` and
 > `package-lock.json` by `scripts/licenses.mjs` (`npm run licenses`) and added to the
-> archive by `scripts/publish-release.sh`. The 0.7.0 build predates the bundle, so its
-> texts are published as `Forthy-0.7.0-licenses.zip`.
+> archive by `scripts/publish-release.sh`. The 0.7.0 app archive predates the bundle, so
+> for that version the texts live only in `Forthy-0.7.0-licenses.zip`.
 
 ## Bundled at runtime
 
