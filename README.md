@@ -6,6 +6,8 @@ Run code in the real context of your Laravel app, inspect models, tables, routes
 config, stream Artisan and follow your logs — from a local project, Docker, SSH or a
 Kubernetes pod.
 
+![Forthy Workbench: a warm session, a nested dump tree and the query count](docs/screenshots/workspace.jpg)
+
 ## Download
 
 [**Download the latest version**](https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip)
@@ -37,6 +39,18 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Any target** — local PHP, Docker, SSH (key or password) and Kubernetes pods.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
   never written to disk.
+
+| Welcome | Database |
+| --- | --- |
+| ![The first-run window with no saved connections](docs/screenshots/welcome.jpg) | ![The users table filtered to admins, with the structure panel](docs/screenshots/database.jpg) |
+
+| Models | Artisan |
+| --- | --- |
+| ![The User model: columns, relations and scopes](docs/screenshots/model.jpg) | ![php artisan about streaming into a console tab](docs/screenshots/artisan.jpg) |
+
+| Logs | Snippets |
+| --- | --- |
+| ![The read-only log viewer with an expanded stack trace](docs/screenshots/logs.jpg) | ![The snippet library in the light theme](docs/screenshots/snippets.jpg) |
 
 ## Requirements
 
