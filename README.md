@@ -45,6 +45,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 
 ## Screenshots
 
+Every frame comes from the same demo project (`acme`) with fictional paths and data.
+
 | Welcome | Database |
 | --- | --- |
 | ![The first-run window with no saved connections](docs/screenshots/welcome.jpg) | ![The users table filtered to admins, with the structure panel](docs/screenshots/database.jpg) |
