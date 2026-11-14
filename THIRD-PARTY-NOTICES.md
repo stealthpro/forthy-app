@@ -8,7 +8,8 @@ license family of each one. The full texts are published as
 > **Status: generated.** `licenses/` is produced from `Cargo.lock` and
 > `package-lock.json` by `scripts/licenses.mjs` (`npm run licenses`) and added to the
 > archive by `scripts/publish-release.sh`. The 0.7.0 app archive predates the bundle, so
-> for that version the texts live only in `Forthy-0.7.0-licenses.zip`.
+> for that version the texts live only in `Forthy-0.7.0-licenses.zip`; 0.7.1 and later
+> include them next to `Forthy.app`.
 
 ## Bundled at runtime
 
