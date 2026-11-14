@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Forthy — a native Laravel workbench for macOS</title>
+    <meta
+      name="description"
+      content="Run PHP in the real context of your Laravel app. Structured dumps, models, tables, routes, config, Artisan and logs — local, Docker, SSH or Kubernetes."
+    />
+    <link rel="canonical" href="https://stealthpro.github.io/forthy-app/" />
+    <meta name="theme-color" content="#090b10" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Forthy" />
+    <meta property="og:url" content="https://stealthpro.github.io/forthy-app/" />
+    <meta property="og:title" content="Forthy — a native Laravel workbench for macOS" />
+    <meta
+      property="og:description"
+      content="Run PHP in the real context of your Laravel app. Local, Docker, SSH or Kubernetes — with structured dumps, a query log and a native data explorer."
+    />
+    <meta property="og:image" content="https://stealthpro.github.io/forthy-app/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Forthy — a native Laravel workbench for macOS" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Forthy — a native Laravel workbench for macOS" />
+    <meta
+      name="twitter:description"
+      content="Run PHP in the real context of your Laravel app. Local, Docker, SSH or Kubernetes."
+    />
+    <meta name="twitter:image" content="https://stealthpro.github.io/forthy-app/og.jpg" />
+
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./" aria-label="Forthy — home">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="brand-gradient" x1="8" y1="8" x2="56" y2="56">
+                <stop offset="0" stop-color="#a092ff" />
+                <stop offset="1" stop-color="#6a4ce0" />
+              </linearGradient>
+            </defs>
+            <rect width="64" height="64" rx="16" fill="url(#brand-gradient)" />
+            <path
+              d="M22 46V18h22v7H30v5h11v7H30v9z"
+              fill="#fff"
+              fill-opacity="0.96"
+            />
+          </svg>
+          <span>Forthy</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <a href="#install">Install</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+          <a
+            class="icon-link"
+            href="https://github.com/stealthpro/forthy-app"
+            aria-label="Forthy on GitHub"
+          >
+            <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+              />
+            </svg>
+          </a>
+          <a class="button button-primary button-small" href="https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip">
+            Download
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">macOS · Apple Silicon</p>
+            <h1>Your Laravel app,<br /><span class="accent">from the inside.</span></h1>
+            <p class="lead">
+              Forthy is a native workbench for running PHP in the real context of your
+              Laravel application — local, Docker, SSH or Kubernetes.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip"
+              >
+                Download for macOS
+                <span class="button-note">v<span data-version>0.7.0</span> · arm64</span>
+              </a>
+              <a class="button button-ghost" href="https://github.com/stealthpro/forthy-app">
+                View on GitHub
+              </a>
+            </div>
+            <p class="fine-print">
+              Free download · Proprietary license · No telemetry · macOS 11 or later
+            </p>
+          </div>
+
+          <figure class="hero-shot">
+            <img
+              src="screenshots/workspace.jpg"
+              width="1920"
+              height="1200"
+              alt="Forthy Workbench: a warm session, a nested dump tree and the query count"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <figcaption class="sr-only">
+              The Forthy workbench after running PHP in a demo Laravel application.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="runtimes" aria-labelledby="runtimes-title">
+        <div class="wrap">
+          <h2 class="section-title small" id="runtimes-title">One app. Four runtimes.</h2>
+          <p class="section-lead">
+            The same editor, dumps and inspector whichever machine actually runs the code.
+          </p>
+          <ul class="runtime-grid">
+            <li>
+              <span class="runtime-name">Local</span>
+              <span class="runtime-note">PHP on this Mac</span>
+            </li>
+            <li>
+              <span class="runtime-name">Docker</span>
+              <span class="runtime-note">A Compose service</span>
+            </li>
+            <li>
+              <span class="runtime-name">SSH</span>
+              <span class="runtime-note">Key, agent or password</span>
+            </li>
+            <li>
+              <span class="runtime-name">Kubernetes</span>
+              <span class="runtime-note">A pod and container</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Everything in one window</p>
+            <h2 id="features-title">Built for the way Laravel<br />actually runs</h2>
+            <p class="section-lead">
+              No Composer package, no route to expose and no server to keep alive. The
+              bridge is embedded in the app and boots your real application.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" /></svg>
+              </span>
+              <h3>Tinker with structure</h3>
+              <p>
+                Run PHP in a warm session and read dumps as native trees: models,
+                collections, arrays, exceptions. Every query arrives with bindings, the
+                file that triggered it and timing.
+              </p>
+            </article>
+
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM7 9h6M7 13h10M7 17h4" /></svg>
+              </span>
+              <h3>Artisan, searchable</h3>
+              <p>
+                Find any command by name, pin favorites above the list and stream output
+                into its own console tab. Aliases are deduplicated; history keeps the rest.
+              </p>
+            </article>
+
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7zM4 7l8 4 8-4M12 11v10" /></svg>
+              </span>
+              <h3>Models and relations</h3>
+              <p>
+                Open a model as a reference page: real columns, casts, relations, methods
+                and scopes. Follow a relation to the next model without losing your place.
+              </p>
+            </article>
+
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM4 10h16M9 10v9M13 13h4M13 16h4" /></svg>
+              </span>
+              <h3>A database explorer</h3>
+              <p>
+                Browse tables with a typed filter builder, sort and page through rows, and
+                inspect indexes and foreign keys. Export the current view to CSV or JSON.
+              </p>
+            </article>
+
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5" /></svg>
+              </span>
+              <h3>Routes and config</h3>
+              <p>
+                Read the running route table — middleware, handlers, resolved URLs — and
+                the real configuration tree, with secrets masked. Switch database
+                connections from the Database section.
+              </p>
+            </article>
+
+            <article class="feature">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" /></svg>
+              </span>
+              <h3>Logs that follow</h3>
+              <p>
+                Follow single, daily or custom-channel files. Levels and stack traces are
+                parsed, traces collapse until you need them, and the view is always
+                read-only.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="screenshots" aria-labelledby="screenshots-title">
+        <div class="wrap">
+          <div class="section-heading centered">
+            <p class="eyebrow">Screenshots</p>
+            <h2 id="screenshots-title">The actual app, not a mockup</h2>
+            <p class="section-lead">
+              Every frame comes from the same demo project, with fictional paths and data.
+            </p>
+          </div>
+
+          <figure class="shot-wide">
+            <img
+              src="screenshots/editor.jpg"
+              width="1920"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+              alt="PHP completion for config keys from the running application"
+            />
+            <figcaption>
+              Completions come from the running app: models, columns, relations, scopes,
+              facades, config keys, route names and Artisan commands.
+            </figcaption>
+          </figure>
+
+          <div class="shot-grid">
+            <figure class="shot-card">
+              <img
+                src="screenshots/welcome.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The first-run window with no saved connections"
+              />
+              <figcaption>Welcome, before the first connection.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/database.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The users table filtered to admins, with the structure panel"
+              />
+              <figcaption>The users table with a typed filter and its structure.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/model.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The User model: columns, relations and scopes"
+              />
+              <figcaption>A model page: columns, casts, relations and scopes.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/artisan.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="php artisan about in a console tab"
+              />
+              <figcaption>Artisan output streaming into a console tab.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/routes.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The /users route: middleware, resolved URL and route() helper"
+              />
+              <figcaption>A route with its middleware, resolved URL and helper.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/config.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="config/app with the application key masked"
+              />
+              <figcaption>Config keys from the running app, secrets masked.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/logs.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The read-only log viewer with an expanded stack trace"
+              />
+              <figcaption>Logs with parsed levels and an expanded trace.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/snippets.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="The snippet library with the Revenue this month snippet open"
+              />
+              <figcaption>Snippets are saved locally and tagged when destructive.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/palette.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="Searching for user across models, tables, snippets and runs"
+              />
+              <figcaption>One palette over modules, tables, models, routes and history.</figcaption>
+            </figure>
+            <figure class="shot-card">
+              <img
+                src="screenshots/settings.jpg"
+                width="1920"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                alt="Settings: theme, font size and editor options"
+              />
+              <figcaption>Dark, light or follow the system — plus editor options.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how" aria-labelledby="how-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2 id="how-title">Three steps, no setup in your project</h2>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">1</span>
+              <h3>Add a connection</h3>
+              <p>
+                Pick a local folder, a Docker service, an SSH host or a Kubernetes pod.
+                Forthy probes PHP and boots Laravel before it saves anything.
+              </p>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <h3>Work with the real app</h3>
+              <p>
+                Run PHP, inspect models and tables, search routes and config, stream
+                Artisan and follow logs — all against the application as it runs now.
+              </p>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <h3>Keep the useful bits</h3>
+              <p>
+                Save snippets, keep run and Artisan history, pin favorites. All of it
+                lives in a local SQLite database; nothing is uploaded anywhere.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-soft" aria-labelledby="safety-title">
+        <div class="wrap safety-grid">
+          <div>
+            <p class="eyebrow">Safety</p>
+            <h2 id="safety-title">Local-first by construction</h2>
+            <p class="section-lead">
+              Forthy is a desktop app, not a service. Your project stays where it is.
+            </p>
+          </div>
+          <ul class="check-list">
+            <li>No package, route or server is installed in your application.</li>
+            <li>Connections, snippets and settings live in local SQLite.</li>
+            <li>SSH passwords stay in memory for the session — never on disk, in a log or in argv.</li>
+            <li>Destructive code is flagged before it runs; nothing runs on import.</li>
+            <li>Database browsing and logs are read-only; no telemetry, no accounts.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="install" aria-labelledby="install-title">
+        <div class="wrap install-grid">
+          <div class="install-card">
+            <p class="eyebrow">Download</p>
+            <h2 id="install-title">Get Forthy for macOS</h2>
+            <p>
+              One zip, no installer. The build is ad-hoc signed, so on the first launch
+              use <strong>right-click → Open</strong>.
+            </p>
+            <a
+              class="button button-primary button-block"
+              href="https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip"
+            >
+              Download Forthy
+              <span class="button-note">v<span data-version>0.7.0</span> · Apple Silicon</span>
+            </a>
+            <p class="fine-print">
+              <a href="https://github.com/stealthpro/forthy-app/releases">All releases</a> ·
+              <a href="https://github.com/stealthpro/forthy-app/blob/main/CHANGELOG.md">Changelog</a>
+            </p>
+            <details class="verify">
+              <summary>Verify the download</summary>
+              <p>
+                Download the matching <code>.sha256</code> file from the release page, then:
+              </p>
+              <pre><code>shasum -a 256 -c Forthy-macos-aarch64.zip.sha256</code></pre>
+            </details>
+          </div>
+
+          <div class="requirements">
+            <h3>Requirements</h3>
+            <ul class="check-list">
+              <li>macOS 11 or later, Apple Silicon (arm64)</li>
+              <li>PHP 8.1+ on the host — or a Docker, SSH or Kubernetes target</li>
+              <li>A Laravel 10–13 project with <code>vendor/</code> installed</li>
+            </ul>
+            <h3>First launch</h3>
+            <ol class="install-steps">
+              <li>Unzip the archive.</li>
+              <li>Right-click <strong>Forthy.app</strong> → <strong>Open</strong>.</li>
+              <li>Add a connection and pick your project folder.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="faq" aria-labelledby="faq-title">
+        <div class="wrap faq-wrap">
+          <div class="section-heading">
+            <p class="eyebrow">FAQ</p>
+            <h2 id="faq-title">Questions, answered</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>Is Forthy free?</summary>
+              <p>
+                The macOS build is free to download and use. Forthy is proprietary
+                software: redistribution and modification are not permitted. See the
+                <a href="https://github.com/stealthpro/forthy-app/blob/main/LICENSE">license</a>.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need to install anything in my Laravel project?</summary>
+              <p>
+                No. The PHP bridge is embedded in the app, copied into the target or
+                streamed over stdin. There is no Composer package, no route and no server
+                to deploy. For remote targets the app does need a POSIX shell and PHP in
+                the container or host.
+              </p>
+            </details>
+            <details>
+              <summary>Which Laravel and PHP versions are supported?</summary>
+              <p>
+                Laravel 10 through 13, with PHP 8.1 or newer. Older Laravel 10.x releases
+                are handled by schema fallbacks in the bridge.
+              </p>
+            </details>
+            <details>
+              <summary>Does it work on Intel Macs?</summary>
+              <p>
+                Not yet — the published build is Apple Silicon only (arm64). There is no
+                separate Intel download.
+              </p>
+            </details>
+            <details>
+              <summary>How are SSH passwords handled?</summary>
+              <p>
+                A password is asked once, passed to ssh through a private askpass helper
+                and kept in memory for the session. It is never written to the database,
+                an export, a workspace or a log. Key and agent authentication are the
+                default.
+              </p>
+            </details>
+            <details>
+              <summary>Is my code or data sent anywhere?</summary>
+              <p>
+                No. There is no telemetry and no account. Connections, snippets and
+                settings stay on your Mac; remote execution happens only on the target
+                you configure.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="./" aria-label="Forthy — home">
+            <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <rect width="64" height="64" rx="16" fill="#8b7bff" />
+              <path d="M22 46V18h22v7H30v5h11v7H30v9z" fill="#fff" fill-opacity="0.96" />
+            </svg>
+            <span>Forthy</span>
+          </a>
+          <p>A native Laravel workbench for macOS.</p>
+          <p class="fine-print">© 2026 Forthy. All rights reserved.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="https://github.com/stealthpro/forthy-app">GitHub</a>
+          <a href="https://github.com/stealthpro/forthy-app/releases">Releases</a>
+          <a href="https://github.com/stealthpro/forthy-app/blob/main/CHANGELOG.md">Changelog</a>
+          <a href="https://github.com/stealthpro/forthy-app/blob/main/LICENSE">License</a>
+          <a href="https://github.com/stealthpro/forthy-app/blob/main/THIRD-PARTY-NOTICES.md">Third-party notices</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

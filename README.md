@@ -11,7 +11,7 @@ Kubernetes pod.
 ## Download
 
 [**Download the latest version**](https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip)
-· [All releases](https://github.com/stealthpro/forthy-app/releases)
+· [All releases](https://github.com/stealthpro/forthy-app/releases) · [Website](https://stealthpro.github.io/forthy-app/)
 
 Apple Silicon (arm64), macOS 11 or later. The build is ad-hoc signed, so on first launch
 use **right-click → Open**. Verify the download with the `.sha256` file from the release
