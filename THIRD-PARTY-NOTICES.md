@@ -1,12 +1,13 @@
 # Third-party notices
 
-Forthy bundles third-party software. This file lists the components that ship with
-the application and the license family each one uses. Full license texts travel
-with the release archive; the list below is the authoritative inventory.
+Forthy bundles third-party software. This inventory lists the components and the
+license family of each one. The full texts ship in `licenses/` next to `Forthy.app`
+in the release archive, and as `Forthy-<version>-licenses.zip` on the release page.
 
-> **Status: draft.** The complete per-crate text bundle (`licenses/` in the release
-> archive) is generated before the first public binary release. Until then this
-> inventory is accurate at the component level only.
+> **Status: generated.** `licenses/` is produced from `Cargo.lock` and
+> `package-lock.json` by `scripts/licenses.mjs` (`npm run licenses`) and added to the
+> archive by `scripts/publish-release.sh`. The 0.7.0 build predates the bundle, so its
+> texts are published as `Forthy-0.7.0-licenses.zip`.
 
 ## Bundled at runtime
 
@@ -16,14 +17,15 @@ with the release archive; the list below is the authoritative inventory.
 | React / React DOM | 19.x | MIT |
 | Monaco Editor | 0.52.x | MIT |
 | `@tauri-apps/api`, `@tauri-apps/plugin-dialog`, `@tauri-apps/plugin-opener` | 2.x | MIT OR Apache-2.0 |
-| `lucide-react` | 0.5xx | ISC |
+| `lucide-react` | 1.x | ISC |
 | `@fontsource-variable/inter` | 5.x | SIL Open Font License 1.1 |
 | `@fontsource-variable/jetbrains-mono` | 5.x | SIL Open Font License 1.1 |
-| Rust crates (`Cargo.lock`) | see lockfile | MIT / Apache-2.0 / BSD / MPL-2.0 / ISC / Zlib, per crate |
+| Rust crates (`Cargo.lock`) | see lockfile | per crate: MIT, Apache-2.0, BSD-3-Clause, ISC, Zlib, MPL-2.0, 0BSD, Unlicense, Unicode-3.0, OFL-1.1 |
 
-The Rust dependency graph is reproducible from `src-tauri/Cargo.lock`; the JavaScript
-graph from `package-lock.json`. Both lockfiles are the source of truth for exact
-versions.
+The Rust list covers the macOS dependency graph from
+`cargo tree --target aarch64-apple-darwin`, including build and proc-macro crates.
+The npm list covers production packages from `package-lock.json`; dev tooling is not
+shipped.
 
 ## Not bundled
 
@@ -34,7 +36,14 @@ versions.
 
 ## Regenerating
 
-The release pipeline is expected to produce the full text bundle from the two
-lockfiles (`cargo about` and a `license-checker`-style pass over the npm tree).
-The generated `licenses/` directory is copied next to `Forthy.app` in the release
-archive. Update this file whenever a direct dependency changes.
+`npm run licenses` writes `release/licenses/`: every upstream license file, a
+`README.md` with the full component table, `manifest.json` with the same inventory in
+machine-readable form, and `texts/` with the standard license texts. Components that
+ship no license file (or only an SPDX declaration) get a generated `NOTICE.txt` that
+names the component and its copyright holders.
+
+`scripts/publish-release.sh` regenerates the bundle, adds `licenses/`, `LICENSE` and
+this file to the app archive, and publishes a standalone
+`Forthy-<version>-licenses.zip` alongside it.
+
+Update the inventory whenever a direct dependency changes.
