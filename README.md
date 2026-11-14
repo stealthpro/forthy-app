@@ -97,4 +97,4 @@ Proprietary. All rights reserved. The binary may be downloaded and used as-is;
 redistribution and modification are not permitted. See [LICENSE](LICENSE).
 Third-party components and their licenses are listed in
 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md); the full texts ship with the
-release.
+release. See [CHANGELOG.md](CHANGELOG.md) for the release history.
