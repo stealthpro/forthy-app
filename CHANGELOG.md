@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.7.2 — 2026-11-15
+
+Build-only release: the app behaves exactly like 0.7.1.
+
+- The macOS bundle is now built and published by the repository's release
+  workflow on a GitHub-hosted arm64 runner instead of a local machine.
+- The archive checksum differs from 0.7.1 because the binary was recompiled
+  with the runner's Rust toolchain.
+- Third-party license texts (`licenses/`, `LICENSE`, `THIRD-PARTY-NOTICES.md`)
+  ship inside the archive, as in 0.7.1.
+
 ## 0.7.1 — 2026-11-14
 
 Patch release with fixes from the post-release audit.
