@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.7.6 — 2026-11-16
+
+Forthy can update itself now.
+
+- The app checks the public release feed four seconds after launch and then
+  every six hours. A newer version appears as a notification over the status
+  bar and as an update button in the titlebar; nothing is downloaded until you
+  press **Update**, and the app restarts only after you confirm the install.
+- Downloads are verified against the signing key compiled into the app, and the
+  update archive is bound to the advertised version, so a tampered manifest
+  cannot swap in an older build.
+- Settings gains **Check for updates automatically** (Behavior) and **Check for
+  updates** (About, also in the command palette). Automatic checks can be
+  turned off; manual checks keep working.
+- Release pages now also carry `Forthy.app.tar.gz` and `latest.json`. Users on
+  0.7.5 and older keep using the zip for this one release; automatic updates
+  start with 0.7.6.
+
 ## 0.7.5 — 2026-11-16
 
 Patch release for the Database module.

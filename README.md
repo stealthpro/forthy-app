@@ -14,8 +14,9 @@ Kubernetes pod.
 · [All releases](https://github.com/stealthpro/forthy-app/releases) · [Website](https://stealthpro.github.io/forthy-app/)
 
 Apple Silicon (arm64), macOS 11 or later. The build is ad-hoc signed, so on first launch
-use **right-click → Open**. Verify the download with the `.sha256` file from the release
-page:
+use **right-click → Open**. Forthy 0.7.6 and newer update themselves from inside the app:
+accept the update notice, then confirm the restart. Verify the download with the `.sha256`
+file from the release page:
 
 ```bash
 shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
@@ -40,6 +41,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   past runs.
 - **Any target** — local PHP, Docker, SSH (key or password) and Kubernetes pods.
 - **Themes** — dark, light or follow the system.
+- **Updates** — checks the public release feed, then downloads and installs a new
+  version only after you confirm it. Every archive is signature-checked first.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
   never written to disk.
 
@@ -89,7 +92,11 @@ config files.
 ## Privacy
 
 Connections, snippets and settings stay on your machine. SSH passwords live in memory
-only. There is no telemetry, and your code is not sent anywhere.
+only. There is no telemetry, and your code is not sent anywhere. The only automatic
+network request is the update check: it fetches a signed manifest from the public GitHub
+release, which reveals your IP address and the Forthy version as any HTTPS request does,
+and nothing about your projects. Automatic checks can be turned off in Settings →
+Behavior.
 
 ## Support
 

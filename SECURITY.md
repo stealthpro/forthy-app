@@ -23,10 +23,16 @@ A redacted example is enough.
 
 ## Scope
 
-In scope: the Forthy application bundle, the embedded PHP bridge, the transports and the
-connection-file import. Out of scope: vulnerabilities in your own Laravel application or
-in third-party packages it depends on, and reports against versions older than the latest
+In scope: the Forthy application bundle, the embedded PHP bridge, the transports, the
+connection-file import and the in-app updater (its manifest, signature verification and
+install step). Out of scope: vulnerabilities in your own Laravel application or in
+third-party packages it depends on, and reports against versions older than the latest
 release.
+
+Update archives are signed, and Forthy verifies the signature against the key compiled
+into the app before installing. A report that an update can be installed without a valid
+signature, or that the update feed can redirect an install to a different build, is in
+scope.
 
 ## Supported versions
 
