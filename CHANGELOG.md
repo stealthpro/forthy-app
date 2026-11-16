@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.5 — 2026-11-16
+
+Patch release for the Database module.
+
+- Clicking a foreign-key value opened the related table with `id = …`, so a
+  relation that points at another key (a `uid`, `uuid` or any non-`id` primary
+  key) showed an empty page or the wrong row. The bridge now reports each
+  reference as `{table, column}`: a real foreign key supplies the referenced
+  column, and the `<name>_id` guess falls back to the related table's primary
+  key. A `users.team_uid → teams.uid` relation opens `teams` filtered on
+  `uid`.
+- The Database tab itself is unchanged; only the target of the related-row
+  link moved from a hardcoded `id` to the column the schema reports.
+
 ## 0.7.4 — 2026-11-16
 
 Second patch for real projects: Forthy now reads a project without loading its
