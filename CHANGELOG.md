@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.3 — 2026-11-16
+
+Patch release for connecting to a real Laravel project.
+
+- Connecting failed for projects that keep helper files under `app/` (for
+  example `app/Support/helpers.php` loaded from `composer.json`): the model
+  scan loaded every PHP file under `app/`, included the helper file a second
+  time and killed PHP with `Cannot redeclare function`. The dialog showed only
+  "The bridge response contained no project info". Model discovery now reads
+  each file's tokens and loads only files that declare the class their path
+  maps to.
+- A fatal error while the bridge reads a project is reported with its real
+  message (`FatalError: …`) instead of an empty response.
+
 ## 0.7.2 — 2026-11-15
 
 Build-only release: the app behaves exactly like 0.7.1.
