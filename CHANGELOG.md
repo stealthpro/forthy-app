@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.7.4 — 2026-11-16
+
+Second patch for real projects: Forthy now reads a project without loading its
+classes.
+
+- 0.7.3 reported the real reason a project could not be read, and it turned out
+  to be a compile-time fatal in a class the application itself never loads
+  (`Declaration of App\Utils\Encrypter::supported(...) must be compatible
+  with Illuminate\Encryption\Encrypter::supported(...)`). Model discovery no
+  longer loads every class-shaped file under `app/`: it reads each file's
+  tokens (namespace, imports, `extends`) and walks the parent chain statically,
+  so only files that really declare a `Model`/`Authenticatable`/`Pivot`
+  subclass are autoloaded.
+- A model that is skipped this way is simply absent from the Models list; the
+  project still connects, because the broken class is never executed.
+
 ## 0.7.3 — 2026-11-16
 
 Patch release for connecting to a real Laravel project.
