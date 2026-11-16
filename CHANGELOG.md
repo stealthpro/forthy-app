@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.7 — 2026-11-16
+
+Maintenance release; the application is unchanged.
+
+- CI, release and Pages workflows now use the Node 24 action releases:
+  `actions/checkout@v7`, `actions/setup-node@v7`, `actions/upload-artifact@v7`,
+  `actions/upload-pages-artifact@v5` and `actions/deploy-pages@v5`. GitHub's
+  Node 20 deprecation warning is gone.
+- Build artifacts uploaded by the release workflow are named after the tag
+  (`forthy-vX.Y.Z`).
+- This is the first release published after 0.7.6, so it is the one that
+  exercises the in-app update path from 0.7.6.
+
 ## 0.7.6 — 2026-11-16
 
 Forthy can update itself now.
