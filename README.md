@@ -91,6 +91,15 @@ config files.
 Connections, snippets and settings stay on your machine. SSH passwords live in memory
 only. There is no telemetry, and your code is not sent anywhere.
 
+## Support
+
+Bugs and feature requests: [open an issue](https://github.com/stealthpro/forthy-app/issues).
+Please include the Forthy version, macOS version and connection type, and remove passwords,
+keys and customer data from anything you paste.
+
+Security problems: follow [SECURITY.md](SECURITY.md) and report them privately — never in a
+public issue.
+
 ## License
 
 Proprietary. All rights reserved. The binary may be downloaded and used as-is;
