@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.9.2 — 2026-11-17
+
+A Database fix.
+
+- **Database picker** — the connection picker now appears only when the project
+  really uses more than one database: the default connection plus the connections
+  that open and already hold tables. The stock `mysql`, `mariadb`, `pgsql` and
+  `sqlsrv` entries of a fresh `config/database.php`, empty databases and a second
+  name for the same database stay out; an empty database joins the list after its
+  first migration.
+- **Table list scope** — on MySQL a selected connection used to list tables from
+  every user database on the server, because `getTables()` without a schema means
+  "all non-system databases". The table list, table pages, SQL console and exports
+  are now scoped to the selected connection's own database.
+
 ## 0.9.1 — 2026-11-17
 
 Two small conveniences on top of 0.9.0.

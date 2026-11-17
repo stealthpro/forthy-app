@@ -33,7 +33,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   tabs.
 - **Models** — an Eloquent reference for the real app: attributes, casts, relations,
   methods and scopes.
-- **Database** — browse tables with a typed filter builder, page through rows and export.
+- **Database** — browse tables with a typed filter builder, page through rows and export;
+  the connection picker only offers databases that really exist and already hold tables.
 - **Storage** — every disk from `config/filesystems.php`: browse folders in a
   file-manager tab, preview text, CSV, Excel, Word, PDF and images in place, download any
   folder as an archive and upload with a destination-first dialog.
