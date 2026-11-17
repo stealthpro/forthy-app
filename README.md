@@ -47,12 +47,16 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   with contexts, namespaces, pods and containers picked from the cluster's own
   lists; a pod that a rollout replaced is offered again instead of leaving the
   connection broken.
+- **Locks** — optionally ask macOS to authenticate with Touch ID or the Mac account
+  password before the app opens or before a chosen project does. Locked connections stay
+  marked, and Forthy stores only a flag — never a password.
 - **Themes** — dark, light or follow the system.
 - **Updates** — checks the public release feed, then downloads and installs a new
   version only after you confirm it. Every archive is signature-checked first, and
   **Check for Updates…** in the application menu runs the same check on demand.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
-  never written to disk.
+  never written to disk, and the optional locks are checked by macOS without the app ever
+  seeing the password.
 
 ## Screenshots
 
@@ -108,7 +112,8 @@ config files.
 ## Privacy
 
 Connections, snippets and settings stay on your machine. SSH passwords live in memory
-only. There is no telemetry, and your code is not sent anywhere. The only automatic
+only, and the optional app/connection locks store a flag while macOS performs the
+authentication. There is no telemetry, and your code is not sent anywhere. The only automatic
 network request is the update check: it fetches a signed manifest from the public GitHub
 release, which reveals your IP address and the Forthy version as any HTTPS request does,
 and nothing about your projects. Automatic checks can be turned off in Settings →

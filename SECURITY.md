@@ -24,8 +24,10 @@ A redacted example is enough.
 ## Scope
 
 In scope: the Forthy application bundle, the embedded PHP bridge, the transports, the
-connection-file import and the in-app updater (its manifest, signature verification and
-install step). Out of scope: vulnerabilities in your own Laravel application or in
+connection-file import, the in-app updater (its manifest, signature verification and
+install step), and the optional locks — a locked connection or a locked app opening
+without the macOS LocalAuthentication prompt, or a stored password/hash appearing where
+it should not (the app stores no lock password at all). Out of scope: vulnerabilities in your own Laravel application or in
 third-party packages it depends on, and reports against versions older than the latest
 release.
 

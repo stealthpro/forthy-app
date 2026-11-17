@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.10.0 — 2026-11-17
+
+Forthy can lock itself and individual connections — and the check is macOS, not a
+password invented by the app.
+
+- **Connection lock** — open **Edit connection → Lock** and turn on **Require Touch ID
+  or the Mac password to open**. Before the project opens, macOS shows Touch ID, or the
+  Mac account password when Touch ID is cancelled or unavailable. Forthy stores only a
+  flag and never sees or keeps the password. The unlock lasts for that connection's
+  session: closing it or quitting asks again, while browsing modules and tabs does not.
+- **App lock** — **Settings → Security → Ask for Touch ID or the Mac password on
+  launch**, also available in the application menu. At launch the connection library and
+  workspace stay hidden behind a lock screen, and the last project reopens only after
+  unlocking. **Lock Now** (`⌘⌃L`) locks immediately, an optional idle timer can lock
+  after inactivity, and enabling the lock shows the system prompt once so it cannot lock
+  you out by mistake.
+- **Locked connections are marked** with a persistent red lock on the welcome card, the
+  title-bar switcher, the connection menu and the Workbench connection card.
+- **Nothing to forget** — there is no Forthy password, hash or reset: macOS performs the
+  check through Touch ID or your account password. The lock protects against someone
+  using your unlocked Mac; it is not disk encryption.
+- The welcome connection cards lost their decorative arrow, so names get the space.
+
 ## 0.9.2 — 2026-11-17
 
 A Database fix.
