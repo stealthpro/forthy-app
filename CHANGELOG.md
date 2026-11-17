@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.11.0 — 2026-11-17
+
+Storage can delete, and the Workbench shows the project's `.env` without turning it into
+an editor tab.
+
+- **Delete a file** from its row or from the preview modal. Every deletion asks first;
+  there is no one-click delete anywhere in the module.
+- **Delete a folder** after a confirmation that counts what goes with it: files, folders
+  and their total size, plus how many `.gitignore`-style placeholders disappear with the
+  tree. Recursion exists only through that separate, confirmed command, so deleting a
+  file can never remove a tree, and the disk root is never deletable.
+- **System files stay protected** — `.gitignore`, `.gitkeep`, `.gitattributes`, any
+  `.env*`, `.htaccess`, `.htpasswd`, `.user.ini` and `web.config` show a lock instead of a
+  delete action, and the bridge refuses them even if the UI is bypassed. `.DS_Store` and
+  `Thumbs.db` remain deletable clutter.
+- **`.env` in a modal** — the Runtime card in Workbench opens the project's `.env`, with
+  `.env.example` as a reference when there is none. Comments and blank lines stay intact,
+  values of secret-looking keys are masked until **Show secrets**, every row has a **Copy**
+  action for its value, and the file is read from the host for Local and
+  Docker-with-folder connections and inside the runtime otherwise. Its contents never
+  enter the bootstrap, a workspace, a log or a code tab.
+- The `.env` rows are one aligned line grid — numbers and code share the same line — and
+  the per-row copy action is a labelled chip instead of a bare icon.
+
 ## 0.10.0 — 2026-11-17
 
 Forthy can lock itself and individual connections — and the check is macOS, not a
