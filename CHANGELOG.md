@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.9.0 — 2026-11-17
+
+Connecting to a cluster is now a matter of choosing what is actually there
+instead of typing it from memory.
+
+- **Cluster pickers** — the Kubernetes connection keeps its context, namespace,
+  pod and container, but you no longer type them blind: clicking a field lists
+  the real values, read with `kubectl` through the app's own transport, and each
+  list has its own **Refresh**. The dialog opens every value even while the field
+  holds one of them, keeps free text for a namespace that does not exist yet, and
+  never overwrites what you configured — a value that is missing from the cluster
+  stays, with a warning. The namespace is deliberately not prefilled, because
+  `kubectl` usually prints `default`, which is rarely the namespace the app lives
+  in.
+- **Recreated pods** — a rollout replaces the pod name, and a saved connection
+  used to keep pointing at the pod that no longer exists. When a connect fails
+  because the saved pod is gone, Forthy lists the pods in the namespace, marks
+  their status and containers, preselects one that is Running, and reconnects
+  with the pod and container you pick. The connection's identity is the context
+  plus namespace, so replacing a pod does not create a second connection for the
+  same target.
+- **Reconnect** — the session card's **Reconnect** now re-runs the connection for
+  Kubernetes targets instead of only restarting the warm PHP process, so the
+  replacement dialog appears there too. **Reset** still means "start the session
+  from scratch".
+- **Readable kubectl errors** — retries and raw stderr from `kubectl` are folded
+  into one actionable sentence: unreachable API server, missing RBAC permission,
+  bad certificate or a timeout, with the address that failed.
+
 ## 0.8.0 — 2026-11-17
 
 Files, without leaving the app: browse the application's own filesystem disks,

@@ -42,7 +42,10 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Logs** — follow channel and daily files, with parsed levels and stack traces.
 - **Command palette** — one search over modules, tables, models, routes, snippets and
   past runs.
-- **Any target** — local PHP, Docker, SSH (key or password) and Kubernetes pods.
+- **Any target** — local PHP, Docker, SSH (key or password) and Kubernetes pods,
+  with contexts, namespaces, pods and containers picked from the cluster's own
+  lists; a pod that a rollout replaced is offered again instead of leaving the
+  connection broken.
 - **Themes** — dark, light or follow the system.
 - **Updates** — checks the public release feed, then downloads and installs a new
   version only after you confirm it. Every archive is signature-checked first.
