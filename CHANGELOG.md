@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.9.1 — 2026-11-17
+
+Two small conveniences on top of 0.9.0.
+
+- **Check for Updates…** is now in the application menu, right under About. It
+  runs the same manual check as Settings → About and the command palette: a
+  toast when the app is current, or the update dialog with release notes,
+  download progress and the consent-to-install step. The background check, its
+  six-hour interval and its setting are unchanged.
+- **Pinned connections** on the Welcome screen no longer keep their pin, edit
+  and delete buttons on screen. Like every other connection card, the buttons
+  appear when the card is hovered or focused, so a pinned card is not busier
+  than an ordinary one.
+
 ## 0.9.0 — 2026-11-17
 
 Connecting to a cluster is now a matter of choosing what is actually there

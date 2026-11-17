@@ -48,7 +48,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   connection broken.
 - **Themes** — dark, light or follow the system.
 - **Updates** — checks the public release feed, then downloads and installs a new
-  version only after you confirm it. Every archive is signature-checked first.
+  version only after you confirm it. Every archive is signature-checked first, and
+  **Check for Updates…** in the application menu runs the same check on demand.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
   never written to disk.
 
