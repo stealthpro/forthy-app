@@ -3,8 +3,8 @@
 **A native Laravel workbench for macOS.**
 
 Run code in the real context of your Laravel app, inspect models, tables, routes and
-config, stream Artisan and follow your logs — from a local project, Docker, SSH or a
-Kubernetes pod.
+config, browse your app's files, stream Artisan and follow your logs — from a local
+project, Docker, SSH or a Kubernetes pod.
 
 ![Forthy Workbench: a warm session, a nested dump tree and the query count](docs/screenshots/workspace.jpg)
 
@@ -34,6 +34,9 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Models** — an Eloquent reference for the real app: attributes, casts, relations,
   methods and scopes.
 - **Database** — browse tables with a typed filter builder, page through rows and export.
+- **Storage** — every disk from `config/filesystems.php`: browse folders in a
+  file-manager tab, preview text, CSV, Excel, Word, PDF and images in place, download any
+  folder as an archive and upload with a destination-first dialog.
 - **Routes and config** — the actual route table and configuration tree of the running
   app.
 - **Logs** — follow channel and daily files, with parsed levels and stack traces.
@@ -69,6 +72,14 @@ Every frame comes from the same demo project (`acme`) with fictional paths and d
 | Command palette | Settings |
 | --- | --- |
 | ![Searching for user across models, tables, snippets and runs](docs/screenshots/palette.jpg) | ![Settings: theme, font size and editor options](docs/screenshots/settings.jpg) |
+
+### Files and disks
+
+Storage browses the disks of the running application: previews images, CSV, Excel, Word
+and PDF files in place, downloads any folder as an archive and uploads into the folder
+you pick.
+
+![Image preview in the Storage modal](docs/screenshots/storage.jpg)
 
 ### Completions from the running app
 

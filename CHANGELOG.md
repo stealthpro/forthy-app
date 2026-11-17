@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.8.0 — 2026-11-17
+
+Files, without leaving the app: browse the application's own filesystem disks,
+preview what is inside, download anything and upload into the folder you mean.
+
+- **Storage** is a new module. The sidebar lists every disk from
+  `config/filesystems.php` — local, public, S3 and custom disks. A disk opens its
+  own file-manager tab with breadcrumb navigation, folders first, sizes and
+  modification times; the tab remembers the disk and folder and re-reads them on
+  restore. A disk whose adapter cannot be built (for example the default `s3`
+  disk without `league/flysystem-aws-s3-v3`) is marked unavailable with the
+  reason instead of opening an empty view.
+- **Previews** stay in a modal. Text and JSON render with a non-selectable
+  line-number gutter and light JSON highlighting, CSV/TSV as a table or raw
+  text, Excel `.xlsx` workbooks with a sheet picker, dates and formulae, Word
+  `.docx` documents as clean HTML, PDFs in the system viewer, and images. CSV and
+  XLSX tables keep their controls fixed while the grid scrolls, start at 300 rows
+  and report "299 of 7,999 rows" with **Show 300 more** instead of stopping
+  silently.
+- **Download any file**, in 1 MB chunks through the bridge when the file is not
+  on this machine; a local disk is copied directly.
+- **Download any folder as an archive**: a `.zip` for local and Docker folders, a
+  streamed `.tar.gz` for SSH, Kubernetes and container-only Docker, and a paged
+  bridge zip for cloud disks. The destination is picked in the save panel before
+  the progress dialog appears; archives are capped at 2 GB / 50,000 entries,
+  report progress and can be cancelled.
+- **Upload** with a destination-first dialog: the disk and the full folder path
+  are visible before a file is chosen and can be changed in an inline folder
+  tree. Drop several files at once; a file that would replace an existing one is
+  marked before the upload starts, and the bridge refuses an unconfirmed
+  overwrite, so a stale listing cannot replace data.
+- Paths are never abbreviated: breadcrumbs and dialog subtitles draw every folder
+  and wrap on deep paths.
+
 ## 0.7.7 — 2026-11-16
 
 Maintenance release; the application is unchanged.

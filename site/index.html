@@ -7,14 +7,14 @@
     <title>Forthy — a native Laravel workbench for macOS</title>
     <meta
       name="description"
-      content="Run PHP in the real context of your Laravel app. Structured dumps, models, tables, routes, config, Artisan and logs — local, Docker, SSH or Kubernetes."
+      content="Run PHP in the real context of your Laravel app. Structured dumps, models, tables, routes, config, Artisan, logs and the app's own files — local, Docker, SSH or Kubernetes."
     />
     <link rel="canonical" href="https://stealthpro.github.io/forthy-app/" />
     <meta name="theme-color" content="#090b10" />
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=0.7.7" />
+    <link rel="stylesheet" href="styles.css?v=0.8.0" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Forthy" />
@@ -36,7 +36,7 @@
     />
     <meta name="twitter:image" content="https://stealthpro.github.io/forthy-app/og.jpg" />
 
-    <script src="site.js?v=0.7.7" defer></script>
+    <script src="site.js?v=0.8.0" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -101,7 +101,8 @@
             <h1>The Laravel console<br /><span class="accent">you actually want.</span></h1>
             <p class="lead">
               Forthy is a native workbench for running PHP in the real context of your
-              Laravel application — local, Docker, SSH or Kubernetes.
+              Laravel application — with its database, files, routes and logs — local,
+              Docker, SSH or Kubernetes.
             </p>
             <div class="hero-actions">
               <a
@@ -109,7 +110,7 @@
                 href="https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip"
               >
                 Download for macOS
-                <span class="button-note">v<span data-version>0.7.7</span> · arm64</span>
+                <span class="button-note">v<span data-version>0.8.0</span> · arm64</span>
               </a>
               <a class="button button-ghost" href="https://github.com/stealthpro/forthy-app">
                 View on GitHub
@@ -242,6 +243,23 @@
                 parsed, traces collapse until you need them, and the view is always
                 read-only.
               </p>
+            </article>
+
+            <article class="feature feature-wide">
+              <span class="feature-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 7a1 1 0 0 1 1-1h4.6l2 2H20a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zM3 11h18" /></svg>
+              </span>
+              <div>
+                <h3>Your application's files</h3>
+                <p>
+                  Every filesystem disk from <code>config/filesystems.php</code> opens its
+                  own file-manager tab: preview images, CSV, Excel, Word and PDF in place,
+                  download a whole folder as an archive, and upload with a
+                  destination-first dialog that marks each replacement before it happens.
+                  Nothing is indented into a tree, so a folder ten levels deep is one
+                  click away.
+                </p>
+              </div>
             </article>
           </div>
         </div>
@@ -384,6 +402,22 @@
               <figcaption>Dark, light or follow the system — plus editor options.</figcaption>
             </figure>
           </div>
+
+          <figure class="shot-wide">
+            <img
+              src="screenshots/storage.jpg"
+              width="1920"
+              height="1200"
+              loading="lazy"
+              decoding="async"
+              alt="Image preview in the Storage modal"
+            />
+            <figcaption>
+              Storage opens the application's own disks: a preview stays in a modal with
+              the full path, metadata, reload and download, and any folder can be saved as
+              an archive.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -455,7 +489,7 @@
               href="https://github.com/stealthpro/forthy-app/releases/latest/download/Forthy-macos-aarch64.zip"
             >
               Download Forthy
-              <span class="button-note">v<span data-version>0.7.7</span> · Apple Silicon</span>
+              <span class="button-note">v<span data-version>0.8.0</span> · Apple Silicon</span>
             </a>
             <p class="fine-print">
               <a href="https://github.com/stealthpro/forthy-app/releases">All releases</a> ·
