@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.12.10 — 2026-11-18
+
+Update checks always offer the newest release, and environment variables get the right
+Laravel name.
+
+- **Fresh update offer** — pressing **Check for updates**, or clicking the update bell or
+  notice, now asks the release feed again instead of reopening the release it already knew
+  about. A newer release replaces the old offer and the dialog switches to it; if the feed
+  is already up to date, the stale offer is dropped. While the check runs, **Download** is
+  disabled and shows a "Checking…" state. A download that already started is never
+  discarded by a check.
+- **`APP_LOCALE` hint** — environment variables are process variables, so Laravel reads
+  its own names: use `APP_LOCALE=en` to switch the application language, because the shell
+  `LOCALE` variable is ignored by Laravel. The connection and Artisan run dialogs now say
+  so, and the name placeholder is `APP_LOCALE`.
+
 ## 0.12.9 — 2026-11-18
 
 SQL results go straight into a spreadsheet, connections get CLI environment variables,
