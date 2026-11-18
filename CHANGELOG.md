@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.12.5 — 2026-11-18
+
+Long values in the `.env` viewer wrap cleanly.
+
+- **Wrapping** — a value that does not fit now fills the rest of its line and continues at
+  the beginning of the next line. The key and `=` never break, so `OPENAI_API_KEY` no
+  longer splits into `OPENAI_API_K` / `EY`.
+- **Copy stays clear** — the hover Copy chip keeps its reserved column and sits on the
+  first line of a wrapped row, so it never covers the value.
+- No new screenshots: no README or site frame shows the `.env` modal.
+
 ## 0.12.4 — 2026-11-18
 
 The Workbench `.env` viewer has a find bar.
