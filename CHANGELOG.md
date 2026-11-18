@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.12.6 — 2026-11-18
+
+Small fixes across the lists and the layout.
+
+- **Full Artisan names** — a long command name no longer ends in an ellipsis: it wraps onto
+  a second line, and the row tooltip carries the full name (in the command list, in
+  favorites and in Recent runs). The hover actions moved into an overlay above the first
+  line, so names and descriptions get the whole row width.
+- **Update bell on the start page** — the bell shown while a release is waiting now sits in
+  the start page topbar next to the version too, so an update found before connecting stays
+  one click away after the persistent notice is dismissed with **Later**.
+- **Snippet copy picker** — "copy snippet to another connection" lists every other saved
+  connection (name plus its kind and path) instead of asking for a name typed from memory;
+  arrows/Enter pick, typing filters.
+- **Resizable sidebar** — drag the splitter between the sidebar and the tabs to resize it
+  (232–560 px, the workbench keeps at least 640 px), double-click to restore the default,
+  and the width is remembered between launches.
+- The Artisan README screenshot was re-captured (descriptions keep more text now); no other
+  frame changed.
+
 ## 0.12.5 — 2026-11-18
 
 Long values in the `.env` viewer wrap cleanly.
