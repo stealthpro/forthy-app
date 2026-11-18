@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.12.8 — 2026-11-18
+
+Every tab closes now, and an empty workbench has a place of its own.
+
+- **Close every tab** — closing the last tab leaves the workbench empty instead of
+  immediately opening a new `Untitled` tab, so `⌘W` works on the final tab too. The
+  status bar simply has no active tab to show.
+- **Empty workbench** — the empty area renders a CSS-only canvas in the app's style:
+  aurora gradients, a dot grid and a soft glow follow the theme, with the project name
+  and the ways back in — **New PHP tab** (`⌘T`), **SQL console** and **Quick open**
+  (`⌘P`) — plus a `⌘K` command-palette hint. The actions reflow on narrow windows, and
+  the background stops drifting with Reduce Motion.
+- **The empty state survives a restart** — the workspace saves an empty tab list as a
+  valid snapshot, so quitting with nothing open reopens the same canvas instead of a
+  starter tab. A connection that has never been opened still starts from its welcome
+  tab.
+
 ## 0.12.7 — 2026-11-18
 
 The SQL workbench: snippets in two languages, scripts in the console, exportable results.
