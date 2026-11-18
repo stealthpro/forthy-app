@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.12.9 — 2026-11-18
+
+SQL results go straight into a spreadsheet, connections get CLI environment variables,
+and Artisan commands link to Tinker and their source.
+
+- **Copy a SQL result** — every read result now has **Copy** next to **Export**. It puts
+  the rows currently shown on the clipboard as a tab-separated table with a header row,
+  ready to paste into Excel or Google Sheets: `NULL` becomes an empty cell and a tab or a
+  line break inside a value is flattened, so nothing shifts a column. Copy uses the
+  500-row preview; **Export** still reads up to 10,000 rows.
+- **Environment variables per connection** — the connection dialog has an
+  **Environment variables** section, like the ENVIRONMENT VARIABLES of a PhpStorm CLI
+  interpreter: name/value rows such as `LOCALE=en`. They are exported into every PHP,
+  Artisan, Tinker and bridge process of that connection, including **Test connection**.
+  They are plain text and are not part of the connection's identity, so editing them
+  updates the same connection.
+- **Per-run overrides** — the Artisan run dialog shows the connection variables and lets
+  you change, add or remove them for that single run. The saved connection stays
+  untouched, and the console tab marks the run with an `N env` badge. **Run again**
+  repeats the same environment.
+- **Open in Tinker / Open source** — the Artisan dialog can prepare an
+  `Artisan::call('...', [...])` snippet with the current arguments, options and flags in a
+  new PHP tab (with `Artisan::output()` dumped), or open the file where the command is
+  declared at its declaration line — `routes/console.php` for a closure command, the
+  vendor file for a framework command.
+- **Moving connections** — environment variables travel with a connection file behind
+  their own checkbox, because the values are plain text and may contain a token.
+
 ## 0.12.8 — 2026-11-18
 
 Every tab closes now, and an empty workbench has a place of its own.
