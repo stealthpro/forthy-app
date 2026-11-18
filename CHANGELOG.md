@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.12.2 — 2026-11-18
+
+The titlebar shows the running version and looks for updates more often.
+
+- **Version in the titlebar** — the running version now sits next to the settings gear,
+  where the `+` shortcut used to be. New connection is still one click away in the
+  connection switcher menu (and the command palette), so nothing was lost.
+- **Update bell** — while an update is waiting, a bell with an accent dot appears next to
+  the version; its tooltip names the new version and a click opens the update dialog.
+- **Hourly checks** — Forthy checks the release feed once an hour instead of every six
+  hours; the first check still runs four seconds after launch, and choosing **Later** is
+  not repeated while the same version is pending.
+- Screenshots were re-taken for the new titlebar, with the version hidden in every frame,
+  so a future version bump alone never needs new captures.
+
 ## 0.12.1 — 2026-11-18
 
 The window drags from the start page again.

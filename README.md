@@ -57,8 +57,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   password before the app opens or before a chosen project does. Locked connections stay
   marked, and Forthy stores only a flag — never a password.
 - **Themes** — dark, light or follow the system.
-- **Updates** — checks the public release feed, then downloads and installs a new
-  version only after you confirm it. Every archive is signature-checked first, and
+- **Updates** — checks the public release feed once an hour, then downloads and installs
+  a new version only after you confirm it. Every archive is signature-checked first, and
   **Check for Updates…** in the application menu runs the same check on demand.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
   never written to disk, and the optional locks are checked by macOS without the app ever
