@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.12.3 — 2026-11-18
+
+The Workbench shows the project's git status.
+
+- **Git card** — the first module now lists whether the project is a git repository, the
+  current branch (or the detached commit), the tracked upstream and how far it is ahead or
+  behind, plus how many files are staged, unstaged, untracked or conflicted.
+- **One read, no Laravel boot** — the card is read with a single `git status` on the host
+  for Local and Docker-with-folder connections and inside the runtime for SSH, Kubernetes
+  and container-only Docker. A folder that is not a repository (or a runtime without git)
+  is shown as a note, not an error, and the refresh button re-reads it.
+- **Ownership hint** — when git refuses a repository that belongs to another user, the
+  card names the `git config --global --add safe.directory <path>` command instead of
+  repeating git's raw message.
+- The Workbench screenshot was re-taken for the new card; the version stays hidden in
+  every frame.
+
 ## 0.12.2 — 2026-11-18
 
 The titlebar shows the running version and looks for updates more often.

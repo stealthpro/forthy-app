@@ -41,9 +41,12 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   download any folder as an archive, upload with a destination-first dialog, and delete a
   file or a whole folder after a confirmation that counts what goes with it. `.gitignore`,
   `.env`-style placeholders and Laravel's other system files stay locked.
-- **Workbench** — a connection overview of the real target and runtime. The project
-  `.env` opens from the Runtime card in a read-only modal: secret-looking values are
-  masked until you reveal them, and the file never turns into an editor tab.
+- **Workbench** — a connection overview of the real target and runtime, plus the
+  project's git state: repository or not, the current branch (or the detached commit),
+  the tracked upstream and ahead/behind, and staged, unstaged, untracked and conflicted
+  counts. The project `.env` opens from the Runtime card in a read-only modal:
+  secret-looking values are masked until you reveal them, and the file never turns into
+  an editor tab.
 - **Routes and config** — the actual route table and configuration tree of the running
   app.
 - **Logs** — follow channel and daily files, with parsed levels and stack traces.
