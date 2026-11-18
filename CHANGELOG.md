@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.12.1 — 2026-11-18
+
+The window drags from the start page again.
+
+- **Start page** — the Welcome topbar and the startup splash screens are real window drag
+  regions, so the window moves before a project is opened. They previously carried only the
+  Electron `-webkit-app-region` rule, which the WebView ignores, so dragging worked only
+  after a connection had opened.
+- **Nothing else changes** — the buttons and the search field on the topbar stay
+  clickable, double-clicking the topbar toggles maximize, and no screen looks different, so
+  the screenshots are unchanged.
+
 ## 0.12.0 — 2026-11-18
 
 Every text-like preview can be searched in place.
