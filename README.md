@@ -45,8 +45,9 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   project's git state: repository or not, the current branch (or the detached commit),
   the tracked upstream and ahead/behind, and staged, unstaged, untracked and conflicted
   counts. The project `.env` opens from the Runtime card in a read-only modal:
-  secret-looking values are masked until you reveal them, and the file never turns into
-  an editor tab.
+  secret-looking values are masked until you reveal them, it has its own find bar with a
+  match counter and arrows (`⌘F`) that searches the visible rows, and the file never turns
+  into an editor tab.
 - **Routes and config** — the actual route table and configuration tree of the running
   app.
 - **Logs** — follow channel and daily files, with parsed levels and stack traces.

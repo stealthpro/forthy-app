@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.12.4 — 2026-11-18
+
+The Workbench `.env` viewer has a find bar.
+
+- **Find in `.env`** — the read-only modal now carries the same search field as a Storage
+  preview: a match counter, up/down arrows, `Enter`/`Shift+Enter` wrap-around, `⌘F` and a
+  clear action. Every hit is highlighted — including a query that spans the `=` — and the
+  active hit scrolls into view.
+- **Searches what you see** — matches are counted against the rows as rendered, so a
+  masked secret is not searchable until **Show secrets** is on. A query that finds nothing
+  while secrets are hidden explains the masking instead of naming a hidden value.
+- No new screenshots: no README or site frame shows the `.env` modal.
+
 ## 0.12.3 — 2026-11-18
 
 The Workbench shows the project's git status.
