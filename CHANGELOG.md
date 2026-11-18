@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.12.7 — 2026-11-18
+
+The SQL workbench: snippets in two languages, scripts in the console, exportable results.
+
+- **PHP and SQL snippets** — the Snippets module has separate **PHP** and **SQL** creation
+  buttons, and every saved snippet carries a language chip. A SQL snippet opens in the SQL
+  console and **Save** on the console updates that snippet instead of asking for a name
+  again. The tab strip's `+` now opens a chooser (**PHP code** / **SQL console**), and tabs
+  show the same PHP/SQL chip as the lists.
+- **Scripts in one run** — the SQL console runs a whole script: statements are split on
+  top-level `;` outside quotes and comments, and every statement is classified before any of
+  them runs, so a `-- note` before `select` no longer demands **Allow writes** and a
+  mixed script either passes the guard completely or does not run at all. Each statement
+  gets its own result set with a heading, timing and row count.
+- **Export a result** — every read result has an **Export** menu with CSV, Excel and JSON.
+  The export re-reads only that read-only statement (up to 10,000 rows, while the console
+  shows 500), writes a real `.xlsx` workbook, and is never offered for a write statement.
+- **Duplicate column names** — a join that returns two `status` columns keeps both cells;
+  headers are qualified with the source table (`users.id`, `articles.id`) and a duplicate
+  without a table source falls back to `status (2)`. CSV/Excel headers and JSON keys follow
+  the same rule.
+- **SQL runs in History** — console runs are recorded with their SQL result and a `SQL`
+  chip next to PHP runs, and reopen in a SQL console tab with the stored grid.
+- **Tab-bar actions** — **Save** and **Run** for a SQL tab live in the tab strip, like a
+  code tab; the tab shows the unsaved dot and closing a dirty console asks before discarding.
+- **Scheduler environments** — a command registered with `->environments([...])` keeps its
+  cron expression but gets an amber marker and `not in <env>` when the connected environment
+  is excluded, and its tooltip (and the Artisan dialog) names the environments where it does
+  run.
+- README screenshots were re-captured for the new language chips and the SQL console.
+
 ## 0.12.6 — 2026-11-18
 
 Small fixes across the lists and the layout.
