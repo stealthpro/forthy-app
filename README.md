@@ -36,9 +36,10 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Database** — browse tables with a typed filter builder, page through rows and export;
   the connection picker only offers databases that really exist and already hold tables.
 - **Storage** — every disk from `config/filesystems.php`: browse folders in a
-  file-manager tab, preview text, CSV, Excel, Word, PDF and images in place, download any
-  folder as an archive, upload with a destination-first dialog, and delete a file or a
-  whole folder after a confirmation that counts what goes with it. `.gitignore`,
+  file-manager tab, preview text, CSV, Excel, Word, PDF and images in place — with
+  in-preview search over any text-like file, a match counter and arrow navigation —
+  download any folder as an archive, upload with a destination-first dialog, and delete a
+  file or a whole folder after a confirmation that counts what goes with it. `.gitignore`,
   `.env`-style placeholders and Laravel's other system files stay locked.
 - **Workbench** — a connection overview of the real target and runtime. The project
   `.env` opens from the Runtime card in a read-only modal: secret-looking values are
@@ -90,11 +91,12 @@ Every frame comes from the same demo project (`acme`) with fictional paths and d
 ### Files and disks
 
 Storage browses the disks of the running application: previews images, CSV, Excel, Word
-and PDF files in place, downloads any folder as an archive, uploads into the folder you
-pick and deletes files or folders after a counted confirmation. Project system files
+and PDF files in place, finds text inside a preview with a match counter and arrow
+navigation, downloads any folder as an archive, uploads into the folder you pick and
+deletes files or folders after a counted confirmation. Project system files
 (`.gitignore`, `.env*`, `.htaccess` and friends) show a lock instead of a delete action.
 
-![Image preview in the Storage modal](docs/screenshots/storage.jpg)
+![CSV preview with search in the Storage modal](docs/screenshots/storage.jpg)
 
 ### Completions from the running app
 

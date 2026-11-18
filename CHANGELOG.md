@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.12.0 — 2026-11-18
+
+Every text-like preview can be searched in place.
+
+- **Find in a preview** — a field in the preview toolbar highlights every match and shows
+  the position (`3 / 27`). The up/down arrows, or `Enter`/`Shift+Enter`, move between
+  matches and wrap around; `⌘F`/`Ctrl+F` focuses the field and × clears the query.
+- **Every text-like format** — plain text and markup (`.txt`, `.md`, `.yaml`, `.xml`,
+  `.log`, …), pretty-printed JSON with its token colours intact, CSV/TSV in both Table and
+  Raw views, each sheet of an Excel workbook, and Word `.docx` documents. PDFs, images and
+  binaries have no find bar.
+- **The count follows the view** — Table counts cells while Raw counts the raw document;
+  Excel counts the active sheet. Switching views keeps the query and re-counts the hits.
+- **Bounded** — matching is literal and case-insensitive, and a very common query stops at
+  the first 2,000 matches (`2,000+`) so a 1 MB preview cannot freeze the window.
+- The active match scrolls into view and is drawn solid; the other hits keep a softer
+  highlight, and JSON token colours survive the highlight.
+
 ## 0.11.0 — 2026-11-17
 
 Storage can delete, and the Workbench shows the project's `.env` without turning it into
