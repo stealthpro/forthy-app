@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.12.13 — 2026-11-19
+
+The connection cards on the start page are easier to scan, and hovering one no longer hides
+its own title.
+
+- **Actions left the title** — hovering a card used to paint pin, edit and delete on top of
+  the connection name. Edit and delete now sit in the card footer, and the pin has its own
+  corner.
+- **The pin moved to the top-right corner** — a pinned card keeps a visible accent pin there
+  and one click unpins it; hovering any other card reveals the pin in the same corner, so
+  pinning no longer needs hunting in the footer. No lone icon floats at the end of a row.
+- **Names and targets read better** — the name is slightly larger, may wrap to two lines and
+  keeps the full value in a tooltip; the target line (host, container, pod or path) is
+  brighter with a tooltip, and the footer shows the kind with its colour dot and when the
+  connection was last opened, with the exact date in a tooltip. Cards in a row line up their
+  footers.
+- **Kinds and pinning are visible** — the kind tile is tinted per target (local, SSH, Docker,
+  Kubernetes), and a pinned card gets a violet border and a soft tint.
+- **Keyboard fix** — pressing Enter on a card action no longer opens the connection too.
+
 ## 0.12.12 — 2026-11-19
 
 The snippet header is cleaner, and Forthy reopens in the window where you left it.
