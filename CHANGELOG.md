@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.12.12 — 2026-11-19
+
+The snippet header is cleaner, and Forthy reopens in the window where you left it.
+
+- **No duplicate creation button** — the `+` at the top of the Snippets panel duplicated
+  the **PHP** button inside it. Creating a snippet still works through the **PHP** and
+  **SQL** buttons, and import/export keep their icons.
+- **No "local" marker** — the header read "N snippets · local", but the library always
+  lives in Forthy's own local database and is shared by every connection and project, so
+  the suffix told nothing.
+- **The window is remembered** — Forthy reopens with the same size and position, on the
+  same monitor, in fullscreen or maximized mode if that is how you left it. If that
+  monitor is no longer connected, the window opens on the main display instead of
+  off-screen.
+
 ## 0.12.11 — 2026-11-19
 
 Long-running work is never cut off by the app, a running tab cannot be lost, and SQL
