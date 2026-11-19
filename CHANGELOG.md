@@ -1,5 +1,37 @@
 # Changelog
 
+## 0.12.11 — 2026-11-19
+
+Long-running work is never cut off by the app, a running tab cannot be lost, and SQL
+results and snippets get the controls they were missing.
+
+- **Runs finish on their own** — PHP code, SQL queries, exports, **Show more** and Artisan
+  commands no longer carry a built-in deadline: a script can run for hours, like
+  `php artisan tinker`. **Stop** still ends it instantly. Timeouts stay available as
+  optional settings under Settings → Runner; empty (the default) means no limit, and an
+  existing install keeps them empty after the update.
+- **A running tab is protected** — it shows a spinner and cannot be closed; closing the
+  window, quitting or switching connections warns once and stops the work first. SQL tabs
+  got their own **Stop**.
+- **SQL results are complete** — a statement shows its first 500 rows with **Show more**,
+  **Copy** puts every row on the clipboard and **Export** writes every row, so a big
+  result is no longer silently truncated.
+- **Snippets have groups and labels** — organise the library into collapsible folders and
+  tag snippets with up to eight labels; label chips filter the list (picking several
+  requires all of them) and labels used before are offered for reuse.
+- **Tab context menu** — right-click a tab for Close, Close other tabs, Close all tabs,
+  Close unmodified tabs, Close tabs to the left and Close tabs to the right. Escape, a
+  click anywhere else in the app and a click on another tab all close it.
+- **Wider Kubernetes fields** — the context, namespace, pod and container fields use the
+  full dialog width now, so a long pod name is readable in the field and in the list.
+- **Instant start** — the window paints before the project index is built and the project
+  lists fill in a moment later. New defaults: module names under the rail icons on, reopen
+  the last connection off, automatic update checks on.
+- **Environment works with a cached config** — `APP_LOCALE=en` and the other connection
+  variables reach the application even when `bootstrap/cache/config.php` exists, without
+  changing other cached values, and `config:cache`, `config:clear` and `optimize` run from
+  Forthy keep the project's own cache file.
+
 ## 0.12.10 — 2026-11-18
 
 Update checks always offer the newest release, and environment variables get the right
