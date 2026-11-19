@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.12.14 — 2026-11-19
+
+The footer buttons on a connection card now sit in the same corner as the pin.
+
+- **Footer icons moved to the corner** — edit and delete keep the same 5–6 px inset from the
+  card border as the pin in the top-right corner, instead of sitting further in along a
+  centred footer. The footer line moves down with them, and a hovered icon stays inside the
+  rounded corner.
+
 ## 0.12.13 — 2026-11-19
 
 The connection cards on the start page are easier to scan, and hovering one no longer hides
