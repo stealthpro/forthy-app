@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.12.16 — 2026-11-21
+
+Storage can now browse the whole project folder, not only the application's disks.
+
+- **Project files** — a new read-only entry at the top of the Storage sidebar opens the
+  project itself: one tab per project with breadcrumb navigation, folders first, sizes and
+  modification times. Any file is previewed in the same modal as a disk file and downloaded
+  to this Mac; nothing is ever written, uploaded, renamed or deleted there.
+- **Works on every connection** — a local project (and Docker with a project folder) is
+  listed on this Mac, while an SSH, Kubernetes or container-only Docker project is listed
+  and read by PHP inside the runtime. It does not need the warm Laravel bridge, so a dead
+  session or an unreadable disk does not stop it.
+- **Stays safe** — symbolic links are never followed, `.env` files stay hidden (the
+  Workbench Environment modal is still their only viewer), `..` and absolute paths are
+  refused, and one folder shows at most 2,000 entries.
+
 ## 0.12.15 — 2026-11-21
 
 Every open tab now survives a restart, and installing an update no longer drops you on the

@@ -35,12 +35,15 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   methods and scopes.
 - **Database** — browse tables with a typed filter builder, page through rows and export;
   the connection picker only offers databases that really exist and already hold tables.
-- **Storage** — every disk from `config/filesystems.php`: browse folders in a
-  file-manager tab, preview text, CSV, Excel, Word, PDF and images in place — with
-  in-preview search over any text-like file, a match counter and arrow navigation —
-  download any folder as an archive, upload with a destination-first dialog, and delete a
-  file or a whole folder after a confirmation that counts what goes with it. `.gitignore`,
-  `.env`-style placeholders and Laravel's other system files stay locked.
+- **Storage** — every disk from `config/filesystems.php` plus the project itself:
+  browse folders in a file-manager tab, preview text, CSV, Excel, Word, PDF and images in
+  place — with in-preview search over any text-like file, a match counter and arrow
+  navigation — download any folder as an archive, upload with a destination-first dialog,
+  and delete a file or a whole folder after a confirmation that counts what goes with it.
+  `.gitignore`, `.env`-style placeholders and Laravel's other system files stay locked.
+  **Project files** open the whole project folder read-only: preview and download any
+  source, config or route file, on this Mac or inside an SSH, Kubernetes or Docker
+  runtime.
 - **Workbench** — a connection overview of the real target and runtime, plus the
   project's git state: repository or not, the current branch (or the detached commit),
   the tracked upstream and ahead/behind, and staged, unstaged, untracked and conflicted
@@ -101,6 +104,13 @@ deletes files or folders after a counted confirmation. Project system files
 (`.gitignore`, `.env*`, `.htaccess` and friends) show a lock instead of a delete action.
 
 ![CSV preview with search in the Storage modal](docs/screenshots/storage.jpg)
+
+Project files browse the whole project read-only, without the Laravel disks: one tab per
+project, the same preview modal and download, and no write action at all. Symbolic links
+are never followed and `.env` files stay hidden — the Workbench Environment modal is still
+their only viewer.
+
+![Read-only project file manager](docs/screenshots/project.jpg)
 
 ### Completions from the running app
 
