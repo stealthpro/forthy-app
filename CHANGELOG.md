@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.12.15 — 2026-11-21
+
+Every open tab now survives a restart, and installing an update no longer drops you on the
+start page.
+
+- **Artisan console tabs come back** — a console tab was the only kind that closed on restart
+  or reconnect, because only its live process existed and that cannot be saved. The tab is now
+  stored by its run, and after a restart it shows the same command with the output and exit
+  status from the Artisan history; **Run again** works on it. A command that was still running
+  when the app closed opens as **interrupted**, with a note that its output was not kept,
+  instead of a stale or empty result.
+- **A reconnect keeps live consoles** — reconnecting the same connection re-reads the
+  workspace but leaves the consoles that are still streaming (and the active tab) in place.
+- **Installing an update returns to the same workspace** — **Restart and install** is not a
+  quit, so the relaunched app reopens the connection that was open, with its tabs. If the
+  start page was showing at that moment, it comes back to the start page; a failed install
+  leaves the next normal launch unchanged.
+- **The corner notice steps aside** — while the update dialog is open, the "Forthy … is
+  available" notification no longer renders behind it.
+
 ## 0.12.14 — 2026-11-19
 
 The footer buttons on a connection card now sit in the same corner as the pin.
