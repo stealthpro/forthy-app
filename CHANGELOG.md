@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.12.17 — 2026-11-22
+
+Hidden project files are visible in the read-only project browser, history stops opening
+duplicate tabs, and an update can no longer restart the app in the middle of a run.
+
+- **Hidden files are ordinary files** — **Project files** now shows the project as it is:
+  `.env`, `.env.local`, `.gitignore`, `.gitattributes`, `.editorconfig`, `.git` and every
+  other hidden entry are normal rows, previewed as plain read-only text and downloadable
+  like anything else. Symbolic links are still never listed or followed. The Workbench
+  Environment modal keeps its masked viewer for secret values.
+- **One run, one tab** — opening the same SQL run or Artisan run from history again
+  activates the tab that is already open instead of adding a second copy of it, including
+  after a restart.
+- **A history tab shows its result again** — after a restart or a reconnect, a tab opened
+  from history re-reads its run and fills the result grid or the console output, so it no
+  longer comes back empty.
+- **No restart while work is running** — **Restart and install** stays disabled while a PHP
+  run, a SQL query or a live Artisan console is going, and the dialog says why. It becomes
+  available again as soon as that work finishes or is stopped.
+
 ## 0.12.16 — 2026-11-21
 
 Storage can now browse the whole project folder, not only the application's disks.

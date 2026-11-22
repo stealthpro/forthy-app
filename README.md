@@ -42,8 +42,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   and delete a file or a whole folder after a confirmation that counts what goes with it.
   `.gitignore`, `.env`-style placeholders and Laravel's other system files stay locked.
   **Project files** open the whole project folder read-only: preview and download any
-  source, config or route file, on this Mac or inside an SSH, Kubernetes or Docker
-  runtime.
+  source, config or route file — hidden ones like `.env` and `.gitignore` included — on
+  this Mac or inside an SSH, Kubernetes or Docker runtime.
 - **Workbench** — a connection overview of the real target and runtime, plus the
   project's git state: repository or not, the current branch (or the detached commit),
   the tracked upstream and ahead/behind, and staged, unstaged, untracked and conflicted
@@ -66,7 +66,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Themes** — dark, light or follow the system.
 - **Updates** — checks the public release feed once an hour, then downloads and installs
   a new version only after you confirm it. Every archive is signature-checked first, and
-  **Check for Updates…** in the application menu runs the same check on demand.
+  **Check for Updates…** in the application menu runs the same check on demand. The restart
+  waits while a PHP run, a SQL query or an Artisan command is still going.
 - **Safety** — destructive code is flagged and confirmed before it runs; secrets are
   never written to disk, and the optional locks are checked by macOS without the app ever
   seeing the password.
@@ -106,9 +107,10 @@ deletes files or folders after a counted confirmation. Project system files
 ![CSV preview with search in the Storage modal](docs/screenshots/storage.jpg)
 
 Project files browse the whole project read-only, without the Laravel disks: one tab per
-project, the same preview modal and download, and no write action at all. Symbolic links
-are never followed and `.env` files stay hidden — the Workbench Environment modal is still
-their only viewer.
+project, the same preview modal and download, and no write action at all. Hidden entries
+such as `.env`, `.gitignore` and `.git` are ordinary rows, `.env` previews as plain text,
+and symbolic links are never followed. The Workbench Environment modal still masks secret
+values.
 
 ![Read-only project file manager](docs/screenshots/project.jpg)
 
