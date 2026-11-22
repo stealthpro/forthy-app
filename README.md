@@ -45,19 +45,21 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   and delete a file or a whole folder after a confirmation that counts what goes with it.
   `.gitignore`, `.env`-style placeholders and Laravel's other system files stay locked.
   Code in a preview is syntax-highlighted (PHP and Blade, JS/TS, CSS, HTML/XML, SQL, YAML,
-  shell, INI and `.env`, Markdown, Python, Ruby, Go, Rust, Java, Kotlin, Swift, C/C++, C#,
-  GraphQL, Twig, Dockerfile) up to 500 KB, a preview fetches 2 MB of text or 15 MB of
-  binary data, and a CSV/XLSX header stays flush while the grid scrolls.
+  shell, INI and dotfile configs, Markdown, Python, Ruby, Go, Rust, Java, Kotlin, Swift,
+  C/C++, C#, GraphQL, Twig, Dockerfile) up to 500 KB, a preview fetches 2 MB of text or
+  15 MB of binary data, and a CSV/XLSX header stays flush while the grid scrolls. A
+  `.env` file (`.env.local`, `config/.env.production`, …) is the exception: it opens in
+  the same masked viewer as the Workbench modal.
   **Project files** open the whole project folder read-only: preview and download any
   source, config or route file — hidden ones like `.env` and `.gitignore` included — on
   this Mac or inside an SSH, Kubernetes or Docker runtime.
 - **Workbench** — a connection overview of the real target and runtime, plus the
   project's git state: repository or not, the current branch (or the detached commit),
   the tracked upstream and ahead/behind, and staged, unstaged, untracked and conflicted
-  counts. The project `.env` opens from the Runtime card in a read-only modal:
-  secret-looking values are masked until you reveal them, it has its own find bar with a
-  match counter and arrows (`⌘F`) that searches the visible rows, and the file never turns
-  into an editor tab.
+  counts. The project `.env` opens from the Runtime card in a read-only modal: `.env` only
+  (no `.env.example` comparison), secret-looking values are masked until you reveal them,
+  every variable has its own **Copy**, and its find bar with a match counter and arrows
+  (`⌘F`) searches the visible rows — so the file never turns into an editor tab.
 - **Routes and config** — the actual route table and configuration tree of the running
   app.
 - **Logs** — follow channel and daily files, with parsed levels and stack traces.
@@ -117,9 +119,9 @@ CSV/XLSX header stays flush with the top of the grid while scrolling. Project sy
 
 Project files browse the whole project read-only, without the Laravel disks: one tab per
 project, the same preview modal and download, and no write action at all. Hidden entries
-such as `.env`, `.gitignore` and `.git` are ordinary rows, `.env` previews as plain text,
-and symbolic links are never followed. The Workbench Environment modal still masks secret
-values.
+such as `.env`, `.gitignore` and `.git` are ordinary rows; a `.env` file opens in the same
+masked viewer as the Workbench modal (values hidden until **Show secrets**, each one
+copyable), and symbolic links are never followed.
 
 ![Read-only project file manager](docs/screenshots/project.jpg)
 

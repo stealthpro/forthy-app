@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.12.19 — 2026-11-22
+
+Every `.env` file now opens in one viewer, wherever it lives.
+
+- **One `.env` viewer everywhere** — the Workbench Environment modal and a **Project
+  files** (or disk) preview of `.env`, `.env.local`, `config/.env.production` and the rest
+  behave the same: secret-looking values (`APP_KEY`, `DB_PASSWORD`, tokens) are masked
+  until **Show secrets**, every variable has its own **Copy** that copies the value alone,
+  and the find bar searches only what is on screen — a masked secret cannot be confirmed
+  by a query.
+- **`.env` only in the Workbench modal** — the `.env.example` comparison tab, the fallback
+  to the example file and the redundant **Copy path** button are gone; the path is in the
+  subtitle. A project without `.env` shows a plain empty state.
+- **Storage previews stay read-only** — a dotenv file previews as the same masked rows
+  instead of a syntax-coloured text dump, and **Copy path**, **Reload** and **Download**
+  stay in the Storage footer where they were.
+
 ## 0.12.18 — 2026-11-22
 
 A run now says what it cut, a file preview colours the code, and a tab comes back with the
