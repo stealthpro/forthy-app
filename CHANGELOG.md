@@ -1,5 +1,31 @@
 # Changelog
 
+## 0.12.18 — 2026-11-22
+
+A run now says what it cut, a file preview colours the code, and a tab comes back with the
+result it had.
+
+- **A truncated run says so** — raw `echo`/`print` output still keeps its first 1 MB, but
+  the note now names the size the run really produced ("… output truncated at 1 MB of
+  12.4 MB"), and the cut lands on a character boundary, so the output never ends in a
+  broken character. At most 200 dumps are kept per run and the panel says how many were
+  dropped; a `dd()` tree itself is not cut by the text limit.
+- **Syntax highlighting in the file preview** — a code file opened from **Project files**
+  or from a disk is coloured with the same grammars as the editor tabs: PHP and Blade,
+  JavaScript/TypeScript, CSS/SCSS/Less, HTML/XML, SQL, YAML, shell, INI and `.env`,
+  Markdown, Python, Ruby, Go, Rust, Java, Kotlin, Swift, C/C++, C#, GraphQL, Twig and
+  Dockerfile.
+- **More text, still quick** — the preview fetches 2 MB of text instead of 1 MB and keeps
+  the colours up to 500 KB; a larger file is shown as plain text, because colouring it
+  would make the modal open with a pause. Binary previews stay at 15 MB and **Download**
+  still returns the whole file.
+- **A run tab comes back with its result** — a tab where you pressed **Run** now keeps the
+  id of its run, so after a restart it reopens with the result instead of an empty pane. A
+  PHP run also shows the variables it recorded with that run, labelled as recorded rather
+  than live.
+- **Sticky table header** — the CSV/XLSX header in a preview stays flush with the top of
+  the scrolling area instead of leaving a sliver of a row above it.
+
 ## 0.12.17 — 2026-11-22
 
 Hidden project files are visible in the read-only project browser, history stops opening

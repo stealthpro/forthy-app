@@ -26,9 +26,12 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 
 - **Tinker** — write PHP and run it inside the running application, with structured
   dumps (models, collections, arrays, exceptions) and a query log with bindings and
-  timing.
+  timing. Every run is bounded so History stays small: raw `echo`/`print` text keeps its
+  first 1 MB and the note names the size the run really produced, and at most 200 dumps are
+  kept (the panel says how many were dropped); a `dd()` tree is not cut by the text limit.
 - **Snippets** — save and reuse code, tag destructive snippets, and keep a history of
-  every run.
+  every run. A tab that ran something reopens with its result after a restart — a PHP run
+  together with the variables it recorded.
 - **Artisan** — a searchable command list with favorites, streaming output and console
   tabs.
 - **Models** — an Eloquent reference for the real app: attributes, casts, relations,
@@ -41,6 +44,10 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   navigation — download any folder as an archive, upload with a destination-first dialog,
   and delete a file or a whole folder after a confirmation that counts what goes with it.
   `.gitignore`, `.env`-style placeholders and Laravel's other system files stay locked.
+  Code in a preview is syntax-highlighted (PHP and Blade, JS/TS, CSS, HTML/XML, SQL, YAML,
+  shell, INI and `.env`, Markdown, Python, Ruby, Go, Rust, Java, Kotlin, Swift, C/C++, C#,
+  GraphQL, Twig, Dockerfile) up to 500 KB, a preview fetches 2 MB of text or 15 MB of
+  binary data, and a CSV/XLSX header stays flush while the grid scrolls.
   **Project files** open the whole project folder read-only: preview and download any
   source, config or route file — hidden ones like `.env` and `.gitignore` included — on
   this Mac or inside an SSH, Kubernetes or Docker runtime.
@@ -101,7 +108,9 @@ Every frame comes from the same demo project (`acme`) with fictional paths and d
 Storage browses the disks of the running application: previews images, CSV, Excel, Word
 and PDF files in place, finds text inside a preview with a match counter and arrow
 navigation, downloads any folder as an archive, uploads into the folder you pick and
-deletes files or folders after a counted confirmation. Project system files
+deletes files or folders after a counted confirmation. A text preview is
+syntax-highlighted up to 500 KB and fetches 2 MB of text (15 MB of binary data), and its
+CSV/XLSX header stays flush with the top of the grid while scrolling. Project system files
 (`.gitignore`, `.env*`, `.htaccess` and friends) show a lock instead of a delete action.
 
 ![CSV preview with search in the Storage modal](docs/screenshots/storage.jpg)
