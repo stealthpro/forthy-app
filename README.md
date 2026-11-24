@@ -26,7 +26,7 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 
 - **Tinker** — write PHP and run it inside the running application, with structured
   dumps (models, collections, arrays, exceptions) and a query log with bindings and
-  timing. Every run is bounded so History stays small: raw `echo`/`print` text keeps its
+  timing. Every run is bounded so run history stays small: raw `echo`/`print` text keeps its
   first 1 MB and the note names the size the run really produced, and at most 200 dumps are
   kept (the panel says how many were dropped); a `dd()` tree is not cut by the text limit.
 - **Snippets** — save and reuse code, tag destructive snippets, and keep a history of

@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.13.2 — 2026-11-24
+
+A polish release: the app starts faster, sessions stop when they should, and the interface
+is quieter and more accessible.
+
+- **A faster start** — the window and shell paint before the editor loads; Monaco and the
+  container terminal now load on demand. The first frame needs about a fifth of the previous
+  JavaScript, and the app is ~40% smaller.
+- **Sessions die with their connection** — closing or deleting a connection, or quitting,
+  stops its PHP bridge, SQL consoles, Artisan children and Docker panes; a `queue:work` no
+  longer outlives the app. A finished run is kept even when the history file cannot be
+  written.
+- **SQL consoles are independent** — each run has its own identity, so Stop in one tab
+  leaves the other query running, and duplicate runs cannot take each other's place.
+- **Secrets leave less trace** — the per-connection merged config cache lives in a private
+  directory, environment values reach PHP over stdin instead of the process list, and the
+  remote bridge no longer uses a predictable temporary path. Connection export leaves
+  environment variables out unless you opt in.
+- **Keyboard and accessibility** — Cmd+K works from inside the editor, the palette and Quick
+  Open keep focus and stay behind an open dialog, log rows are one tab stop
+  (arrows/Enter/C), export menus close on Escape or an outside click, a missing project path
+  is blocked in the dialog, and muted text and control borders meet WCAG AA in both themes.
+- **A light launch that stays light** — the boot splash follows the last theme instead of
+  flashing dark, and the missing favicon is real now.
+- **Repair instead of a crash** — a damaged local library is moved to
+  `forthy.sqlite.corrupt-<timestamp>` and the app opens with a fresh one.
+- **Tables and Storage** — tables whose SQLite driver returns gapped index keys open again
+  instead of failing with "Could not load this table"; file and folder rows in Storage share
+  one height, and their row actions appear on hover or keyboard focus.
+- **Your typing stays yours** — search fields, filters, paths, config keys and both editors
+  opt out of macOS autocorrection, automatic capitalisation and spell checking, so a query
+  like `key` is never rewritten.
+- README and site screenshots were recaptured for the new contrast palette.
+
 ## 0.13.1 — 2026-11-24
 
 Typing in the container shell works again, including in a non-English keyboard layout.
