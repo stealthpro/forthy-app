@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.13.1 — 2026-11-24
+
+Typing in the container shell works again, including in a non-English keyboard layout.
+
+- **Command history** — the Exec shell starts `bash` when the image ships it (`sh`
+  otherwise), so ↑/↓ recall previous commands instead of printing `^[[A^[[B`, and Backspace
+  erases a whole character.
+- **Non-ASCII input** — a container that starts its shell without a locale now gets a
+  working UTF-8 one (`C.UTF-8`): before, readline in a C locale split the bytes of a UTF-8
+  letter, so a typed `д` appeared as `:´`, Enter erased the line with a beep instead of
+  running the command, and converting a word with the keyboard-layout hotkey (⌃⌘) left a
+  broken line. Images that already set a UTF-8 locale keep their own, and images without
+  `locale` (Alpine/musl) are untouched.
+- No new screenshots: no README or site frame shows the exec terminal.
+
 ## 0.13.0 — 2026-11-24
 
 The container that runs your project is now inspectable and enterable from the app.
