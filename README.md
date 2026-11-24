@@ -69,6 +69,12 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   with contexts, namespaces, pods and containers picked from the cluster's own
   lists; a pod that a rollout replaced is offered again instead of leaving the
   connection broken.
+- **Docker containers** — when the project runs inside a container (a Docker connection,
+  or SSH with a container), a Docker module lists that runtime's containers with ports,
+  status and Compose labels. A read-only info modal shows image, command, mounts, working
+  directory and lifetime; **Logs** opens a follower tab; **Exec** opens a real interactive
+  shell in a tab (`docker exec -it` through a PTY, so Ctrl+C, colours and `less` work), and
+  open tabs stay alive while you switch around.
 - **Locks** — optionally ask macOS to authenticate with Touch ID or the Mac account
   password before the app opens or before a chosen project does. Locked connections stay
   marked, and Forthy stores only a flag — never a password.

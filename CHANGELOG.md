@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.13.0 — 2026-11-24
+
+The container that runs your project is now inspectable and enterable from the app.
+
+- **Docker module** — when the project runs in a container (a Docker connection, or SSH
+  with a container), a new Docker module lists that runtime's containers with their ports,
+  state and Compose project/service. Hovering a row offers **Info**, **Logs** and **Exec**,
+  and a row click opens the read-only summary (image, command, working directory, mounts,
+  lifetime); a stopped container cannot start a shell.
+- **A real terminal** — **Exec** opens an interactive shell in a tab through a real PTY
+  (`docker exec -it`, or `ssh -tt … docker exec -it` on a remote server), so Ctrl+C,
+  colours and full-screen programs work. Open shells stay mounted while you switch tabs,
+  the scrollback survives, and a second Exec on the same container only focuses the tab.
+- **Logs in a tab** — follow `docker logs` with stdout and stderr separated, Pause/Resume,
+  a timestamps toggle, Copy, Clear and a bounded buffer; closing the tab stops the stream.
+- **Terminal input fixed** — typing after a keyboard-layout switch no longer duplicates or
+  drops characters, and Backspace in the container shell erases a whole character: the tty
+  starts with `stty iutf8`, so the command that runs is the one on screen.
+
 ## 0.12.19 — 2026-11-22
 
 Every `.env` file now opens in one viewer, wherever it lives.
