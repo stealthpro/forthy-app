@@ -71,18 +71,22 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
 - **Any target** — local PHP, Docker, SSH (key or password) and Kubernetes pods,
   with contexts, namespaces, pods and containers picked from the cluster's own
   lists; a pod that a rollout replaced is offered again instead of leaving the
-  connection broken.
+  connection broken. The Docker container for a Local or SSH connection is picked
+  from a dropdown fed by that target's own `docker ps -a`, and stays typeable when
+  the daemon cannot be reached.
 - **Docker containers** — when the project runs inside a container (a Docker connection,
   or SSH with a container), a Docker module lists that runtime's containers with ports,
   status and Compose labels. A read-only info modal shows image, command, mounts, working
   directory and lifetime; **Logs** opens a follower tab; **Exec** opens a real interactive
   shell in a tab (`docker exec -it` through a PTY, so Ctrl+C, colours, `less`, arrow-key
   history and typing in any keyboard layout work), and open tabs stay alive while you
-  switch around.
+  switch around. The shell starts at a compact 11 px with tight line spacing, and
+  **Settings → Appearance → Terminal font size** resizes it live.
 - **Locks** — optionally ask macOS to authenticate with Touch ID or the Mac account
   password before the app opens or before a chosen project does. Locked connections stay
   marked, and Forthy stores only a flag — never a password.
-- **Themes** — dark, light or follow the system.
+- **Themes** — dark, light or follow the system; editor and terminal font sizes are
+  adjustable in Appearance.
 - **Updates** — checks the public release feed once an hour, then downloads and installs
   a new version only after you confirm it. Every archive is signature-checked first, and
   **Check for Updates…** in the application menu runs the same check on demand. The restart

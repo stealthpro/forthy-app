@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.14.1 — 2026-11-25
+
+A small usability release: container selection, log paths and the exec terminal.
+
+- **Pick the Docker container from a list** — the Local and SSH connection dialogs now
+  offer the target's containers in a dropdown: the local Docker daemon, or the server's
+  daemon over ssh when PHP runs in a container there. Options show the image, state and
+  Compose service; the field stays typeable when the daemon or server cannot be listed,
+  and picking a local container still detects the project path inside it.
+- **Custom log paths can always be removed** — the remove action deletes exactly the
+  saved entry, so a relative path typed by hand no longer stays in the connection behind
+  a false "removed" message. A custom path that points at a file a channel already lists
+  stays visible with a note instead of disappearing, so it too can be removed.
+- **The exec terminal is denser and adjustable** — it starts at 11 px with tighter line
+  spacing, and **Settings → Appearance → Terminal font size** (9–20 px) changes it for
+  open shells without restarting them.
+
 ## 0.14.0 — 2026-11-25
 
 A security release: the local library and exported connection files are now encrypted.
