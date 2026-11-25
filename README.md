@@ -15,7 +15,9 @@ project, Docker, SSH or a Kubernetes pod.
 
 Apple Silicon (arm64), macOS 11 or later. The build is ad-hoc signed, so on first launch
 use **right-click → Open**. Forthy 0.7.6 and newer update themselves from inside the app:
-accept the update notice, then confirm the restart. Verify the download with the `.sha256`
+accept the update notice, then confirm the restart. Updating from 0.13.x converts the local
+library on first launch — keep your Keychain item named `library-key`, and export anything
+you want to move to another Mac. Verify the download with the `.sha256`
 file from the release page:
 
 ```bash
@@ -31,7 +33,8 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   kept (the panel says how many were dropped); a `dd()` tree is not cut by the text limit.
 - **Snippets** — save and reuse code, tag destructive snippets, and keep a history of
   every run. A tab that ran something reopens with its result after a restart — a PHP run
-  together with the variables it recorded.
+  together with the variables it recorded. Export the library and its connections as one
+  file, sealed with a passphrase by default.
 - **Artisan** — a searchable command list with favorites, streaming output and console
   tabs.
 - **Models** — an Eloquent reference for the real app: attributes, casts, relations,
@@ -84,9 +87,10 @@ shasum -a 256 -c Forthy-macos-aarch64.zip.sha256
   a new version only after you confirm it. Every archive is signature-checked first, and
   **Check for Updates…** in the application menu runs the same check on demand. The restart
   waits while a PHP run, a SQL query or an Artisan command is still going.
-- **Safety** — destructive code is flagged and confirmed before it runs; secrets are
-  never written to disk, and the optional locks are checked by macOS without the app ever
-  seeing the password.
+- **Safety** — the local library is encrypted at rest (SQLCipher, key in your login
+  Keychain), exported connection files are sealed with a passphrase by default, and
+  destructive code is flagged and confirmed before it runs. The optional locks are checked
+  by macOS without the app ever seeing the password.
 
 ## Screenshots
 

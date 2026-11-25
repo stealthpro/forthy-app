@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.14.0 — 2026-11-25
+
+A security release: the local library and exported connection files are now encrypted.
+
+- **Connection exports are sealed** — the export dialog protects the file with a
+  passphrase by default (Argon2id + XChaCha20-Poly1305). The passphrase is never
+  stored; importing a sealed file asks for it first, and a wrong passphrase changes
+  nothing. Plain exports still import.
+- **The local library is encrypted** — connections, snippets, run history and Artisan
+  output live in a SQLCipher database whose key is created on first launch and kept in
+  your login Keychain. The key never reaches the library file, an export or a log, and
+  it does not sync or migrate to another Mac. The first launch converts an existing
+  library in place and deletes the plaintext copy once the encrypted one opens; an
+  interrupted conversion is completed or rolled back on the next launch. A copied
+  `forthy.sqlite` no longer opens without the Keychain item, so moving machines goes
+  through a sealed export.
+- **The sidebar header keeps its height** — switching between Snippets and Recent runs
+  no longer shifts the panel.
+- The app is about 3.3 MB larger because SQLCipher and its vendored OpenSSL are
+  compiled in.
+
 ## 0.13.2 — 2026-11-24
 
 A polish release: the app starts faster, sessions stop when they should, and the interface
