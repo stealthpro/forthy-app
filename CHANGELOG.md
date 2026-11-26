@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.14.2 — 2026-11-26
+
+A library release: the start page stopped reordering itself, and connections can be arranged by hand.
+
+- **Connections stay where they were added** — the start page and the connection switcher keep
+  the order the connections were created in, and opening a project no longer moves its card.
+  Pinned cards stay on top in the order they were pinned.
+- **Arrange connections by hand** — drag a card by the grip in its bottom-left corner (or focus
+  the grip and press ↑/↓) to move it: in **Pinned** that arranges the pins, below it the rest of
+  the list. The layout is saved for this Mac, the switcher follows the same order, and a pinned
+  card stays pinned — dragging never moves a card between the two groups.
+- **Save without connecting** — the connection dialog now has **Save** next to **Save &
+  connect**: it stores the name, target, ENV and module choices without opening the project,
+  leaves "Last opened" untouched, and a new connection is added to the library without being
+  probed or opened.
+
 ## 0.14.1 — 2026-11-25
 
 A small usability release: container selection, log paths and the exec terminal.
