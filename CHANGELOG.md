@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.14.3 — 2026-11-26
+
+A database release: views are browsable, and a row count never holds a table hostage.
+
+- **Views in the Database module** — tables and views are one alphabetical list; a view is
+  marked `VIEW` and opens like a table: rows, search, sorting, filters and CSV/JSON export.
+  Its structure panel shows columns only, because a view has no indexes or foreign keys.
+- **Row counts on demand** — opening a table no longer runs a full `COUNT(*)`: the first
+  page appears immediately and a **Count rows** button returns the exact number for the
+  current search and filters. The same button in the model dialog counts that model's rows,
+  so soft-deleted rows are excluded the way the model itself excludes them.
+- **Large or distant databases no longer blank a page** — the eager count used to share the
+  request deadline with reading the page, which is why a model over a view could fail with
+  "Could not load this table" on a slow server. Both cases now show data first and count
+  only when asked.
+
 ## 0.14.2 — 2026-11-26
 
 A library release: the start page stopped reordering itself, and connections can be arranged by hand.
