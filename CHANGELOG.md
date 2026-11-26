@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.14.4 — 2026-11-26
+
+A branding release: the app finally looks like Forthy.
+
+- **New app icon** — an italic F in the panel colour with a white chevron of the same size,
+  slightly overlapping the top arm, on the same violet-to-blue gradient as the brand mark in
+  the title bar. The whole icon set (macOS `.icns`, Windows `.ico` and tile logos, Android and
+  iOS launchers) was rebuilt from a single 1024 px source, and the web favicon follows.
+- **Docs** — the project roadmap is now two files: a short status file and the full archive
+  of released work, so the current state is easier to find.
+
 ## 0.14.3 — 2026-11-26
 
 A database release: views are browsable, and a row count never holds a table hostage.
