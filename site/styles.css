@@ -187,7 +187,8 @@ pre {
   width: 26px;
   height: 26px;
   flex: none;
-  border-radius: 7px;
+  /* `favicon.svg` is the app icon cropped to its content square: the image draws
+     the squircle itself, so no border-radius or gradient lives here. */
 }
 
 .site-nav {
