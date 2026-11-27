@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.14.5 — 2026-11-27
+
+A branding follow-up: one sign everywhere, and a connecting screen that explains itself.
+
+- **One brand mark** — the icon released in 0.14.4 is now the mark inside the app too: the
+  titlebar, the start page, the splash and the lock screen render the same icon set instead
+  of a hand-drawn chevron square, so a future icon change reaches them automatically.
+- **The new icon on the site** — the favicon, the Apple touch icon, the social card and the
+  header/footer logo are derived from the same icon set and no longer carry the old chevron.
+- **A clearer connecting screen** — opening a saved project shows a card with the app icon,
+  the project's runtime and path, an elapsed counter next to an indeterminate bar, and a
+  **Cancel** button; the decorative terminal glyph is gone, and so is the copy that promised
+  to read models, schema and routes before that actually starts.
+
 ## 0.14.4 — 2026-11-26
 
 A branding release: the app finally looks like Forthy.
